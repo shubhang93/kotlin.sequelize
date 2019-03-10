@@ -47,10 +47,8 @@ class SequelizeTest {
         namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
 
         val insertStatement = "INSERT INTO product ($columnNames) VALUES($placeholders)".toString()
-
-
+        
         namedParameterJdbcTemplate.jdbcTemplate.batchUpdate(insertStatement, rows)
-
 
         sequelize = Sequelize(ds, "/Users/shubhangb/kotlin.sequelize/src/test/resources")
 

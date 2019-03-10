@@ -22,11 +22,11 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         val results = arrayListOf<Map<String, Any>>()
         val columnCount = resultSetMetaData.columnCount
         while (resultSet.next()) {
-            val rowMap = mutableMapOf<String, Any>()
+            val rowPairs = mutableListOf<Pair<String, Any>>()
             for (i in 1..columnCount) {
-                rowMap[resultSetMetaData.getColumnName(i)] = resultSet.getObject(i)
+                rowPairs.add(Pair(resultSetMetaData.getColumnName(i), resultSet.getObject(i)))
             }
-            results.add(rowMap)
+            results.add(mapOf(*rowPairs.toTypedArray()))
         }
         return results
     }
