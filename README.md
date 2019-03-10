@@ -1,8 +1,8 @@
-# kotlin.sequelize
+#kotlin.sequelize
 A Library that lets you run SQL queries directly from .sql files
 
 ## Motivation
-* SQL in itself is an extremely matured DSL and providing wrappers around SQL to query data can sometimes be a cumbersome process.
+* SQL in itself is an extremely matured DSL and providing wrappers around SQL to query data can sometimes be a cumbersome process.The real beauty of sql lies in joins which feels very fluent when written as a query.
 * Most of the common REST API(s) return a stringified list of map, which in my SQL can be viewed as a bunch records.
 * Testability, your queries can be writing in .sql files with full syntax highlighting support and can be tested on live database instances.
 * Many modern IDE(s) come with a database extension, which allow you to directly run queries from your IDE.
