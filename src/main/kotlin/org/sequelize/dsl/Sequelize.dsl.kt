@@ -17,6 +17,7 @@ class Params() {
     }
 }
 
+
 @SequelizeDSL
 fun Sequelize.query(block: QueryParams.() -> Unit): ArrayList<Map<String, Any>> {
     val query = QueryParams()

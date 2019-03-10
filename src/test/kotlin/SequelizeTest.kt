@@ -8,18 +8,22 @@ import org.sequelize.dsl.query
 import org.sequelize.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
+const val PATH = "/Users/shubhangb/kotlin.sequelize/src/test/resources"
+
 class SequelizeTest {
     private lateinit var sequelize: Sequelize
 
+    var isSetupDone = false
 
     @Test
     fun itShouldReturnQueryMap() {
-        val qm = extractQueryMap("/Users/shubhangb/kotlin.sequelize/src/test/resources")
+        val qm = extractQueryMap(PATH)
         Assert.assertTrue(qm.size > 1)
     }
 
     @Before
     fun setupDB() {
+        if (isSetupDone) return
         val ds = JdbcDataSource()
         ds.password = ""
         ds.user = "sa"
@@ -31,7 +35,11 @@ class SequelizeTest {
         val products = arrayOf<Map<String, Any>>(
             mutableMapOf("id" to 1, "product_code" to "P1234"),
             mutableMapOf("id" to 2, "product_code" to "P5678"),
-            mutableMapOf("id" to 4, "product_code" to "P7890")
+            mutableMapOf("id" to 4, "product_code" to "P7890"),
+            mutableMapOf("id" to 10, "product_code" to "P9871"),
+            mutableMapOf("id" to 23, "product_code" to "P9451"),
+            mutableMapOf("id" to 25, "product_code" to "P1214"),
+            mutableMapOf("id" to 12, "product_code" to "P8901")
         )
 
         val rows = products.map {
@@ -47,10 +55,12 @@ class SequelizeTest {
         namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
 
         val insertStatement = "INSERT INTO product ($columnNames) VALUES($placeholders)".toString()
-        
+
         namedParameterJdbcTemplate.jdbcTemplate.batchUpdate(insertStatement, rows)
 
-        sequelize = Sequelize(ds, "/Users/shubhangb/kotlin.sequelize/src/test/resources")
+        sequelize = Sequelize(ds, PATH)
+
+        isSetupDone = true
 
     }
 
@@ -81,4 +91,23 @@ class SequelizeTest {
         Assert.assertEquals(expectedResult, result)
 
     }
+
+    @Test
+    fun itShouldReturnProductsWithCodesP8901AndP1214() {
+        val result = sequelize.query {
+            name = "productsInQuery"
+            params { "productCodes" to listOf("P1214", "P8901") }
+        }
+
+        val expectedResult = arrayListOf<Map<String, Any>>(
+            mapOf("ID" to 25, "PRODUCT_CODE" to "P1214"),
+            mapOf("ID" to 12, "PRODUCT_CODE" to "P8901")
+        )
+
+
+        Assert.assertEquals(result, expectedResult)
+
+    }
+
+
 }
