@@ -10,6 +10,13 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 const val PATH = "/Users/shubhangb/kotlin.sequelize/src/test/resources"
 
+enum class QueryName(val queryName: String) {
+    PRODUCT("product"),
+    PRODUCT_WITH_ARG("productWithArg"),
+    PRODUCT_IN_QUERY("productsInQuery")
+}
+
+
 class SequelizeTest {
     private lateinit var sequelize: Sequelize
 
@@ -71,7 +78,7 @@ class SequelizeTest {
             arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "ID" to 1))
 
         val results: ArrayList<Map<String, Any>> = sequelize.query {
-            name = "product"
+            name = QueryName.PRODUCT.queryName
         }
         Assert.assertEquals(expectedResult, results)
     }
@@ -84,7 +91,7 @@ class SequelizeTest {
         )
 
         val result = sequelize.query {
-            name = "productWithArg"
+            name = QueryName.PRODUCT_WITH_ARG.queryName
             params { "productCode" to "P7890" }
         }[0]
 
@@ -95,7 +102,7 @@ class SequelizeTest {
     @Test
     fun itShouldReturnProductsWithCodesP8901AndP1214() {
         val result = sequelize.query {
-            name = "productsInQuery"
+            name = QueryName.PRODUCT_IN_QUERY.queryName
             params { "productCodes" to listOf("P1214", "P8901") }
         }
 
