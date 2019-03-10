@@ -42,5 +42,11 @@ SELECT * FROM product where product_rating = 5000
     }
     
 ```
+## How to run the tests
+* Please clone the repository and replace the paths.
+* Run the tests using ./gradlew test command.
+
+
+
 
 
