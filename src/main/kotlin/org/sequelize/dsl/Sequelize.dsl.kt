@@ -9,8 +9,8 @@ data class QueryParams(var name: String = "", var params: Params? = null)
 
 class Params() {
     private val argumentsMap = mutableMapOf<String, Any>()
-    public val paramMap
-        get() = argumentsMap
+    val paramMap
+        get() = mapOf<String, Any>(*argumentsMap.entries.map { Pair(it.key, it.value) }.toTypedArray())
 
     infix fun String.to(value: Any) {
         argumentsMap[this] = value
