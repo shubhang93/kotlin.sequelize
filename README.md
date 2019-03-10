@@ -10,7 +10,7 @@ A Library that lets you run SQL queries directly from .sql files
 ## What this library does not offer
 * Type checking of your result set, everything returned by this library is a list of maps.
 * Would not recommend this library to perform transactional Database operations.
-* This library is mostly meant to read data from your database with full SQL support, any sort of write operations might not work as expected.
+* This library is mostly meant to read data from your database with full SQL support, any sort of write operations might not work as expected, highly recommend using an ORM.
 
 
 
