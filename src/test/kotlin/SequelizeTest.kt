@@ -1,11 +1,12 @@
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+import org.h2.jdbcx.JdbcDataSource
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import sequelize.Sequelize
-import sequelize.extractQueryMap
-import sequelize.params
-import sequelize.query
+import org.sequelize.Sequelize
+import org.sequelize.dsl.params
+import org.sequelize.dsl.query
+import org.sequelize.extractQueryMap
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 class SequelizeTest {
     private lateinit var sequelize: Sequelize
@@ -13,43 +14,70 @@ class SequelizeTest {
 
     @Test
     fun itShouldReturnQueryMap() {
-        val qm = extractQueryMap("/Users/shubhangb/kotlin.sequelize/src/sqlTest")
+        val qm = extractQueryMap("/Users/shubhangb/kotlin.sequelize/src/test/resources")
         Assert.assertTrue(qm.size > 1)
     }
 
     @Before
     fun setupDB() {
-        val ds = MysqlDataSource()
-        ds.setPassword("password")
-        ds.user = "root"
-        ds.setUrl("jdbc:mysql://localhost:3306/unza_mt")
+        val ds = JdbcDataSource()
+        ds.password = ""
+        ds.user = "sa"
+        ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test"
 
-        sequelize = Sequelize(ds, "/Users/shubhangb/kotlin.sequelize/src/sqlTest")
+        val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
+
+
+        val products = arrayOf<Map<String, Any>>(
+            mutableMapOf("id" to 1, "product_code" to "P1234"),
+            mutableMapOf("id" to 2, "product_code" to "P5678"),
+            mutableMapOf("id" to 4, "product_code" to "P7890")
+        )
+
+        val rows = products.map {
+            it.values.toTypedArray()
+        }.toMutableList()
+
+
+        val placeholders = "?".repeat(rows.first().size).split("").filter { it != "" }.joinToString(",")
+        val columnNames = products.first().keys.toList().joinToString(",")
+
+        namedParameterJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS product(id int,product_code varchar(255));") { it.execute() }
+
+        namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
+
+        val insertStatement = "INSERT INTO product ($columnNames) VALUES($placeholders)".toString()
+
+
+        namedParameterJdbcTemplate.jdbcTemplate.batchUpdate(insertStatement, rows)
+
+
+        sequelize = Sequelize(ds, "/Users/shubhangb/kotlin.sequelize/src/test/resources")
 
     }
 
 
     @Test
-    fun itShouldReturnAnArrayListOfMaps() {
+    fun itShouldReturnAProductWithCodeP1234() {
         val expectedResult: ArrayList<Map<String, Any>> =
-            arrayListOf(mapOf("retailer_code" to "1012", "id" to 11.toLong()))
+            arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "ID" to 1))
 
         val results: ArrayList<Map<String, Any>> = sequelize.query {
-            name = "retailer"
+            name = "product"
         }
         Assert.assertEquals(expectedResult, results)
     }
 
     @Test
-    fun itShouldReturnAProductWithProductCode1412097() {
+    fun itShouldReturnAProductWithProductCodeP7890() {
         val expectedResult = mapOf<String, Any>(
-            "product_code" to "1412097",
-            "id" to 1.toLong()
+            "PRODUCT_CODE" to "P7890",
+            "ID" to 4
         )
 
         val result = sequelize.query {
-            name = "product"
-            params { "productCode" to "1412097" }
+            name = "productWithArg"
+            params { "productCode" to "P7890" }
         }[0]
 
         Assert.assertEquals(expectedResult, result)

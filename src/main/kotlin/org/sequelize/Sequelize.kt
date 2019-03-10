@@ -1,11 +1,11 @@
-package sequelize
+package org.sequelize
 
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import java.sql.ResultSet
 import java.sql.ResultSetMetaData
 import javax.sql.DataSource
 
-class Sequelize(private val dataSource: DataSource, private val queriesFilePath: String) {
+class Sequelize(dataSource: DataSource, queriesFilePath: String) {
 
     private val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
     private var queryMap: Map<String, String> = mapOf()
@@ -13,6 +13,7 @@ class Sequelize(private val dataSource: DataSource, private val queriesFilePath:
     init {
         queryMap = extractQueryMap(filePath = queriesFilePath)
     }
+
 
     private fun resultSetTransformer(
         resultSet: ResultSet,
@@ -43,6 +44,6 @@ class Sequelize(private val dataSource: DataSource, private val queriesFilePath:
                 resultSetTransformer(resultSet, resultSet.metaData)
             }
         } else
-            throw Exception("$queryName Query Not Found")
+            throw Exception("$queryName query Not Found")
     }
 }

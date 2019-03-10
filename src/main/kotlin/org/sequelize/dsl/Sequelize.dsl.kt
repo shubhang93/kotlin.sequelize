@@ -1,4 +1,6 @@
-package sequelize
+package org.sequelize.dsl
+
+import org.sequelize.Sequelize
 
 @DslMarker
 annotation class SequelizeDSL
