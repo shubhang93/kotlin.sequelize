@@ -8,7 +8,7 @@ annotation class SequelizeDSL
 
 data class QueryParam(val queryName: String, val params: Map<String, Any>?)
 
-
+@SequelizeDSL
 class QueryParamBuilder {
     var queryName = ""
     var params: Map<String, Any>? = null
