@@ -5,28 +5,29 @@ import org.sequelize.Sequelize
 @DslMarker
 annotation class SequelizeDSL
 
-data class QueryParams(var name: String = "", var params: Params? = null)
 
-class Params() {
-    private val argumentsMap = mutableMapOf<String, Any>()
-    val paramMap
-        get() = mapOf<String, Any>(*argumentsMap.entries.map { Pair(it.key, it.value) }.toTypedArray())
+data class QueryParam(var name: String, val params: Map<String, Any>?)
 
-    infix fun String.to(value: Any) {
-        argumentsMap[this] = value
+
+@SequelizeDSL
+class QueryParamBuilder {
+    var query = ""
+    var params: Map<String, Any>? = null
+
+
+    fun build(): QueryParam {
+        return QueryParam(query, params)
+
     }
+
 }
 
 
-@SequelizeDSL
-fun Sequelize.query(block: QueryParams.() -> Unit): ArrayList<Map<String, Any>> {
-    val query = QueryParams()
-    val queryParams = query.apply(block)
-    return getQueryResults(queryParams.name, queryParams.params?.paramMap) ?: arrayListOf()
+fun Sequelize.fetchResults(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
+    val queryParam = QueryParamBuilder().apply(block).build()
+    return getQueryResults(queryParam.name, queryParam.params) ?: arrayListOf()
 }
 
-@SequelizeDSL
-fun QueryParams.params(block: Params.() -> Unit) {
-    params = Params().apply(block)
-}
+
+
 
