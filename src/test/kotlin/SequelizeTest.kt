@@ -3,8 +3,7 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.sequelize.Sequelize
-import org.sequelize.dsl.params
-import org.sequelize.dsl.query
+import org.sequelize.dsl.fetchResults
 import org.sequelize.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
@@ -77,8 +76,9 @@ class SequelizeTest {
         val expectedResult: ArrayList<Map<String, Any>> =
             arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "ID" to 1))
 
-        val results: ArrayList<Map<String, Any>> = sequelize.query {
-            name = QueryName.PRODUCT.queryName
+        val results: ArrayList<Map<String, Any>> = sequelize.fetchResults {
+            queryName = QueryName.PRODUCT.queryName
+            params = mapOf("productCode" to "P1234")
         }
         Assert.assertEquals(expectedResult, results)
     }
@@ -90,9 +90,9 @@ class SequelizeTest {
             "ID" to 4
         )
 
-        val result = sequelize.query {
-            name = QueryName.PRODUCT_WITH_ARG.queryName
-            params { "productCode" to "P7890" }
+        val result = sequelize.fetchResults {
+            queryName = QueryName.PRODUCT_WITH_ARG.queryName
+            params = mapOf("productCode" to "P7890")
         }[0]
 
         Assert.assertEquals(expectedResult, result)
@@ -101,9 +101,9 @@ class SequelizeTest {
 
     @Test
     fun itShouldReturnProductsWithCodesP8901AndP1214() {
-        val result = sequelize.query {
-            name = QueryName.PRODUCT_IN_QUERY.queryName
-            params { "productCodes" to listOf("P1214", "P8901") }
+        val result = sequelize.fetchResults {
+            queryName = QueryName.PRODUCT_IN_QUERY.queryName
+            params = mapOf("productCodes" to listOf("P1214", "P8901"))
         }
 
         val expectedResult = arrayListOf<Map<String, Any>>(
