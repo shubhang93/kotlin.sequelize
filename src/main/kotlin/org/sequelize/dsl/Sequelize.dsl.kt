@@ -6,17 +6,16 @@ import org.sequelize.Sequelize
 annotation class SequelizeDSL
 
 
-data class QueryParam(var name: String, val params: Map<String, Any>?)
+data class QueryParam(val queryName: String, val params: Map<String, Any>?)
 
 
-@SequelizeDSL
 class QueryParamBuilder {
-    var query = ""
+    var queryName = ""
     var params: Map<String, Any>? = null
 
 
     fun build(): QueryParam {
-        return QueryParam(query, params)
+        return QueryParam(queryName, params)
 
     }
 
@@ -25,8 +24,12 @@ class QueryParamBuilder {
 
 fun Sequelize.fetchResults(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
     val queryParam = QueryParamBuilder().apply(block).build()
-    return getQueryResults(queryParam.name, queryParam.params) ?: arrayListOf()
+    return getQueryResults(queryParam.queryName, queryParam.params) ?: arrayListOf()
 }
+
+
+
+
 
 
 
