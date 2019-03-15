@@ -14,7 +14,6 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         queryMap = extractQueryMap(filePath = queriesFilePath)
     }
 
-
     private fun resultSetTransformer(
         resultSet: ResultSet,
         resultSetMetaData: ResultSetMetaData
