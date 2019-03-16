@@ -2,6 +2,7 @@ import org.h2.jdbcx.JdbcDataSource
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
+import org.junit.jupiter.api.BeforeAll
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
@@ -20,7 +21,6 @@ enum class QueryName(val queryName: String) {
 class SequelizeTest {
     private lateinit var sequelize: Sequelize
     private lateinit var entity: Entity
-    var isSetupDone = false
     val keys = listOf<String>("PRODUCT_CODE", "PRODUCT_NAME")
 
     @Test
@@ -31,7 +31,6 @@ class SequelizeTest {
 
     @Before
     fun setupDB() {
-        if (isSetupDone) return
         val ds = JdbcDataSource()
         ds.password = ""
         ds.user = "sa"
@@ -68,7 +67,6 @@ class SequelizeTest {
 
         sequelize = Sequelize(ds, PATH)
 
-        isSetupDone = true
 
     }
 
@@ -119,18 +117,30 @@ class SequelizeTest {
     }
 
 
-//    @Test
-//    fun itShouldSaveAndReturnSavedId() {
-//        val data = listOf<Map<String, Any>>(
-//            mapOf("PRODUCT_CODE" to "P9099", "ID" to 267),
-//            mapOf("PRODUCT_CODE" to "P8088", "ID" to 234)
-//        )
-//
-//        val result = entity.save("product", data)
-//        println("result")
-//        println(result)
-//
-//    }
+    private fun insertNewRecordsUsingEntityClass() {
+        val data = listOf<Map<String, Any>>(
+            mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
+            mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
+        )
+        val result = entity.save("product", data)
+    }
 
+    @Test
+    fun shouldReturnNewlySavedRecords() {
+
+        insertNewRecordsUsingEntityClass()
+
+        val expectedResult = listOf<Map<String, Any>>(
+            mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
+            mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
+        )
+        val result = sequelize.fetchResults {
+            queryName = "productsInQuery"
+            params = mapOf("productCodes" to listOf("P8078", "P9099"))
+        }
+
+        Assert.assertEquals(expectedResult, result.map { it.filterKeys { keys.contains(it) } })
+
+    }
 
 }
