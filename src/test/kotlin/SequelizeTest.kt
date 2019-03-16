@@ -2,7 +2,6 @@ import org.h2.jdbcx.JdbcDataSource
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
-import org.junit.jupiter.api.BeforeAll
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
@@ -73,12 +72,11 @@ class SequelizeTest {
 
 
     @Test
-    fun testEntityRelationMappingDSL(){
+    fun testEntityRelationMappingDSL() {
         val mapping = entityRelationMapping {
             table {
-                tableName="PRODUCT"
-                childEntity="PRODUCT_PRICE"
-                primaryKey="PRODUCT_CODE"
+                tableName("PRODUCT")
+
             }
         }
     }

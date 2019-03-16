@@ -20,41 +20,16 @@ data class Table(
 
 @EntityRelationMappingDSL
 class TableBuilder {
-    private var tname = ""
-    private var pk = ""
-    private var fk: String? = null
-    private var childTable: String? = null
-    private var compoundKeys = listOf<String>()
-    private var nullColumns: List<String> = listOf()
-
-
-    infix fun tableName(name: String) {
-        tname = name
-    }
-
-    infix fun foriegnKey(foriegnKey: String) {
-        fk = foriegnKey
-    }
-
-    infix fun primaryKey(primaryKey: String) {
-        pk = primaryKey
-    }
-
-    infix fun childEntity(childEntity: String?) {
-        childTable = childEntity
-    }
-
-    infix fun compoundPrimaryKeys(keys: List<String>) {
-        compoundKeys = keys
-    }
-
-    infix fun nullableColumns(columns: List<String>) {
-        nullColumns = columns
-    }
+    var name = ""
+    var primaryKey = ""
+    var foriegnKey: String? = null
+    var childTable: String? = null
+    var compoundKeys = listOf<String>()
+    var nullColumns: List<String> = listOf()
 
 
     fun build(): Table {
-        return Table(tname, pk, fk, childTable, compoundKeys, nullColumns)
+        return Table(name, primaryKey, foriegnKey, childTable, compoundKeys, nullColumns)
     }
 }
 
