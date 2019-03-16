@@ -14,11 +14,9 @@ class Entity(val dataSource: DataSource) {
         return keys.joinToString(",") { ":$it" }
     }
 
-
     private fun getColumnNames(firstRow: Map<String, Any>): List<String> {
         return firstRow.keys.toList()
     }
-
 
     fun save(entityName: String, data: List<Map<String, Any>>): IntArray {
         val firstRow = data.first()
@@ -36,7 +34,6 @@ class Entity(val dataSource: DataSource) {
         } catch (exception: SQLException) {
             connection?.rollback()
         }
-
         return results
     }
 }
