@@ -29,7 +29,7 @@ class TableBuilder {
 
 
     fun build(): Table {
-        return Table(name, primaryKey, foreignKey, childTable, compoundKeys, nullColumns)
+        return Table(name, primaryKey, childTable, foreignKey, compoundKeys, nullColumns)
     }
 }
 

@@ -5,6 +5,7 @@ import org.junit.Test
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
+import org.sequelize.entity.Table
 import org.sequelize.entity.entityRelationMapping
 import org.sequelize.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
@@ -73,12 +74,30 @@ class SequelizeTest {
 
     @Test
     fun testEntityRelationMappingDSL() {
+
+
         val mapping = entityRelationMapping {
             table {
-                tableName("PRODUCT")
+                name = "product"
+                primaryKey = "id"
+                childTable = "product_level_price"
+                compoundKeys = listOf("product_code", "id")
+                nullColumns = listOf("brand", "category")
 
             }
+
+            table {
+                name = "retailer"
+                primaryKey = "retailer_code"
+            }
         }
+
+        val result = mapping["product"]
+        val expectedResult =
+            Table("name", "id", "product_level_price", null, listOf("product_code", "id"), listOf("brand", "category"))
+
+        Assert.assertEquals(expectedResult, result)
+
     }
 
 
