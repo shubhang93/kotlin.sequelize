@@ -22,14 +22,14 @@ data class Table(
 class TableBuilder {
     var name = ""
     var primaryKey = ""
-    var foriegnKey: String? = null
+    var foreignKey: String? = null
     var childTable: String? = null
     var compoundKeys = listOf<String>()
     var nullColumns: List<String> = listOf()
 
 
     fun build(): Table {
-        return Table(name, primaryKey, foriegnKey, childTable, compoundKeys, nullColumns)
+        return Table(name, primaryKey, foreignKey, childTable, compoundKeys, nullColumns)
     }
 }
 
