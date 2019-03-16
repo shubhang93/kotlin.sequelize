@@ -24,7 +24,7 @@ class SequelizeTest {
 
 
     @Test
-    fun itShouldReturnQueryMap() {
+    fun testQueryMapGeneration() {
         val qm = extractQueryMap(PATH)
         Assert.assertTrue(qm.size > 1)
     }
@@ -117,7 +117,6 @@ class SequelizeTest {
 
     }
 
-
     @Test
     fun testEntityRelationMappingDSL() {
         val mapping = entityRelationMapping {
@@ -153,7 +152,7 @@ class SequelizeTest {
 
 
     @Test
-    fun itShouldReturnAProductWithCodeP1234() {
+    fun testQueryWithParams() {
         val expectedResult: ArrayList<Map<String, Any>> =
             arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "PRODUCT_NAME" to "SOAP"))
 
@@ -165,7 +164,7 @@ class SequelizeTest {
     }
 
     @Test
-    fun itShouldReturnAProductWithProductCodeP7890() {
+    fun testQueryWithParams2() {
         val expectedResult = mapOf<String, Any>(
             "PRODUCT_CODE" to "P7890",
             "PRODUCT_NAME" to "LIGHTER"
@@ -183,7 +182,7 @@ class SequelizeTest {
     }
 
     @Test
-    fun itShouldReturnProductsWithCodesP8901AndP1214() {
+    fun testInQueryBehaviourWithListParam() {
         val result = sequelize.fetchResults {
             queryName = QueryName.PRODUCT_IN_QUERY.queryName
             params = mapOf("productCodes" to listOf("P1214", "P8901"))
@@ -207,9 +206,8 @@ class SequelizeTest {
     }
 
     @Test
-    fun shouldReturnNewlySavedRecords() {
+    fun testIfNewRecordsAreSavedUsingEntityClass() {
         insertNewRecordsUsingEntityClass()
-
         val expectedResult = listOf<Map<String, Any>>(
             mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
             mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
