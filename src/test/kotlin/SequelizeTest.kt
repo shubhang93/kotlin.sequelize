@@ -94,7 +94,14 @@ class SequelizeTest {
 
         val result = mapping["product"]
         val expectedResult =
-            Table("name", "id", "product_level_price", null, listOf("product_code", "id"), listOf("brand", "category"))
+            Table(
+                "product",
+                "id",
+                "product_level_price",
+                null,
+                listOf("product_code", "id"),
+                listOf("brand", "category")
+            )
 
         Assert.assertEquals(expectedResult, result)
 
