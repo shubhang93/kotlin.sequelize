@@ -1,6 +1,5 @@
 import org.h2.jdbcx.JdbcDataSource
 import org.junit.Assert
-import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
 import org.sequelize.Sequelize
@@ -34,7 +33,9 @@ class SequelizeTest {
         private lateinit var sequelize: Sequelize
         private lateinit var entity: Entity
         val keys = listOf<String>("PRODUCT_CODE", "PRODUCT_NAME")
+
         @BeforeClass
+        @JvmStatic
         fun setUpDB() {
             val ds = JdbcDataSource()
             ds.password = ""
@@ -74,47 +75,6 @@ class SequelizeTest {
 
 
         }
-    }
-
-    @Before
-    fun setupDB() {
-        val ds = JdbcDataSource()
-        ds.password = ""
-        ds.user = "sa"
-        ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test"
-
-        val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
-        entity = Entity(dataSource = ds)
-
-        val products = arrayOf<Map<String, Any>>(
-            mutableMapOf("PRODUCT_NAME" to "SOAP", "PRODUCT_CODE" to "P1234"),
-            mutableMapOf("PRODUCT_NAME" to "SHAMPOO", "PRODUCT_CODE" to "P5678"),
-            mutableMapOf("PRODUCT_NAME" to "LIGHTER", "PRODUCT_CODE" to "P7890"),
-            mutableMapOf("PRODUCT_NAME" to "KLEENX", "PRODUCT_CODE" to "P9871"),
-            mutableMapOf("PRODUCT_NAME" to "CUP", "PRODUCT_CODE" to "P9451"),
-            mutableMapOf("PRODUCT_NAME" to "BRUSH", "PRODUCT_CODE" to "P1214"),
-            mutableMapOf("PRODUCT_NAME" to "TOOTH PASTE", "PRODUCT_CODE" to "P8901")
-        )
-
-        val rows = products.map {
-            it.values.toTypedArray()
-        }.toMutableList()
-
-
-        val placeholders = "?".repeat(rows.first().size).split("").filter { it != "" }.joinToString(",")
-        val columnNames = products.first().keys.toList().joinToString(",")
-
-        namedParameterJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS product(id int auto_increment primary key,product_code varchar(255),product_name varchar(255));") { it.execute() }
-
-        namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
-
-        val insertStatement = "INSERT INTO product ($columnNames) VALUES($placeholders)".toString()
-
-        namedParameterJdbcTemplate.jdbcTemplate.batchUpdate(insertStatement, rows)
-
-        sequelize = Sequelize(ds, PATH)
-
-
     }
 
     @Test
