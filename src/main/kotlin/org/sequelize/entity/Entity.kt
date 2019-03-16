@@ -18,7 +18,7 @@ class Entity(val dataSource: DataSource) {
         return firstRow.keys.toList()
     }
 
-    fun save(entityName: String, data: List<Map<String, Any>>): IntArray {
+    fun saveBatch(entityName: String, data: List<Map<String, Any>>): IntArray {
         val firstRow = data.first()
         val columnNames = getColumnNames(firstRow)
         val namesArguments = generateNamedArguments(columnNames)
@@ -27,8 +27,7 @@ class Entity(val dataSource: DataSource) {
         val connection = namedParameterJdbcTemplate.jdbcTemplate.dataSource?.connection
         try {
             connection?.autoCommit = false
-            results =
-                namedParameterJdbcTemplate.batchUpdate(queryStatement, data.map { it.toMutableMap() }.toTypedArray())
+            results = namedParameterJdbcTemplate.batchUpdate(queryStatement, data.map { it.toMutableMap() }.toTypedArray())
             connection?.commit()
 
         } catch (exception: SQLException) {

@@ -202,7 +202,7 @@ class SequelizeTest {
             mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
             mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
         )
-        val result = entity.save("product", data)
+        val result = entity.saveBatch("product", data)
     }
 
     @Test
