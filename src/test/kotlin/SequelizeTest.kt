@@ -6,6 +6,7 @@ import org.junit.jupiter.api.BeforeAll
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
+import org.sequelize.entity.entityRelationMapping
 import org.sequelize.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
@@ -72,6 +73,18 @@ class SequelizeTest {
 
 
     @Test
+    fun testEntityRelationMappingDSL(){
+        val mapping = entityRelationMapping {
+            table {
+                tableName="PRODUCT"
+                childEntity="PRODUCT_PRICE"
+                primaryKey="PRODUCT_CODE"
+            }
+        }
+    }
+
+
+    @Test
     fun itShouldReturnAProductWithCodeP1234() {
         val expectedResult: ArrayList<Map<String, Any>> =
             arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "PRODUCT_NAME" to "SOAP"))
@@ -127,7 +140,6 @@ class SequelizeTest {
 
     @Test
     fun shouldReturnNewlySavedRecords() {
-
         insertNewRecordsUsingEntityClass()
 
         val expectedResult = listOf<Map<String, Any>>(
