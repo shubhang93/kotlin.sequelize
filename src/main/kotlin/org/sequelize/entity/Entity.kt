@@ -27,12 +27,20 @@ class Entity(val dataSource: DataSource) {
         val connection = namedParameterJdbcTemplate.jdbcTemplate.dataSource?.connection
         try {
             connection?.autoCommit = false
-            results = namedParameterJdbcTemplate.batchUpdate(queryStatement, data.map { it.toMutableMap() }.toTypedArray())
+            results =
+                namedParameterJdbcTemplate.batchUpdate(queryStatement, data.map { it.toMutableMap() }.toTypedArray())
             connection?.commit()
 
+        } catch (exception: Exception) {
+            connection?.rollback()
         } catch (exception: SQLException) {
             connection?.rollback()
+        } finally {
+            connection?.close()
         }
+
         return results
     }
+
+
 }

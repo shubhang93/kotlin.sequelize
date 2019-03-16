@@ -178,6 +178,23 @@ class SequelizeTest {
         }
 
         Assert.assertEquals(expectedResult, result.map { it.filterKeys { keys.contains(it) } })
+    }
+
+    @Test
+    fun testTransactionalBehaviourOfSaveBatch() {
+        val data = listOf<Map<String, Any>>(
+            mapOf("PRODUCT_CODE" to "P4532", "PRODUCT_NAME" to "BREAD"),
+            mapOf("PRODUCT_CODE" to "5691", "PRODUCT_NAE" to "KNIFE")
+        )
+
+        val rowCount = entity.saveBatch("product", data)
+        val results = sequelize.fetchResults {
+            queryName = QueryName.PRODUCT_WITH_ARG.queryName
+            params = mapOf("productCode" to "P4532")
+        }
+
+        val expectedResult = arrayListOf<Map<String, Any>>()
+        Assert.assertEquals(expectedResult, results)
 
     }
 
