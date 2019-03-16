@@ -10,12 +10,12 @@ class Entity(val dataSource: DataSource) {
     private val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
 
 
-    fun generateNamedArguments(keys: List<String>): String {
+    private fun generateNamedArguments(keys: List<String>): String {
         return keys.joinToString(",") { ":$it" }
     }
 
 
-    fun getColumnNames(firstRow: Map<String, Any>): List<String> {
+    private fun getColumnNames(firstRow: Map<String, Any>): List<String> {
         return firstRow.keys.toList()
     }
 
@@ -26,13 +26,15 @@ class Entity(val dataSource: DataSource) {
         val namesArguments = generateNamedArguments(columnNames)
         val queryStatement = "INSERT INTO $entityName (${columnNames.joinToString(",")}) VALUES ($namesArguments)"
         var results: IntArray = intArrayOf()
-        //val connection = namedParameterJdbcTemplate.jdbcTemplate.dataSource?.connection
+        val connection = namedParameterJdbcTemplate.jdbcTemplate.dataSource?.connection
         try {
+            connection?.autoCommit = false
             results =
                 namedParameterJdbcTemplate.batchUpdate(queryStatement, data.map { it.toMutableMap() }.toTypedArray())
+            connection?.commit()
 
         } catch (exception: SQLException) {
-
+            connection?.rollback()
         }
 
         return results
