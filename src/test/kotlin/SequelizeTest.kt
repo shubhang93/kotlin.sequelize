@@ -32,6 +32,7 @@ class SequelizeTest {
     companion object {
         private lateinit var sequelize: Sequelize
         private lateinit var entity: Entity
+        private lateinit var entityRelationMapping: Map<String, Table>
         val keys = listOf<String>("PRODUCT_CODE", "PRODUCT_NAME")
         @BeforeClass
         @JvmStatic
@@ -41,8 +42,21 @@ class SequelizeTest {
             ds.user = "sa"
             ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test"
 
+            entityRelationMapping = entityRelationMapping {
+                table {
+                    name = "product"
+                    primaryKey = "id"
+                }
+
+                table {
+                    name = "brand"
+                    primaryKey = "brand_code"
+                }
+            }
+
+
             val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
-            entity = Entity(dataSource = ds)
+            entity = Entity(dataSource = ds, entityRelationMapping = entityRelationMapping)
 
             val products = arrayOf<Map<String, Any>>(
                 mutableMapOf("PRODUCT_NAME" to "SOAP", "PRODUCT_CODE" to "P1234"),
@@ -78,31 +92,13 @@ class SequelizeTest {
 
     @Test
     fun testEntityRelationMappingDSL() {
-        val mapping = entityRelationMapping {
-            table {
-                name = "product"
-                primaryKey = "id"
-                childTable = "product_level_price"
-                compoundKeys = listOf("product_code", "id")
-                nullColumns = listOf("brand", "category")
 
-            }
-
-            table {
-                name = "retailer"
-                primaryKey = "retailer_code"
-            }
-        }
-
-        val result = mapping["product"]
+        val result = entityRelationMapping["product"]
         val expectedResult =
             Table(
                 "product",
                 "id",
-                "product_level_price",
-                null,
-                listOf("product_code", "id"),
-                listOf("brand", "category")
+                null, null, null, null
             )
 
         Assert.assertEquals(expectedResult, result)
@@ -194,7 +190,12 @@ class SequelizeTest {
 
         val expectedResult = arrayListOf<Map<String, Any>>()
         Assert.assertEquals(expectedResult, results)
+    }
 
+    @Test
+    fun testSingleRecordSaving() {
+        val row = mapOf<String, Any>("PRODUCT_CODE" to "P45678", "PRODUCT_NAME" to "OIL")
+        entity.saveOrUpdateOne("product", row)
     }
 
 }
