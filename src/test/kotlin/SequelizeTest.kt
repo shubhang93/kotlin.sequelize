@@ -33,7 +33,6 @@ class SequelizeTest {
         private lateinit var sequelize: Sequelize
         private lateinit var entity: Entity
         val keys = listOf<String>("PRODUCT_CODE", "PRODUCT_NAME")
-
         @BeforeClass
         @JvmStatic
         fun setUpDB() {

@@ -5,7 +5,7 @@ import java.sql.SQLException
 import javax.sql.DataSource
 
 
-class Entity(val dataSource: DataSource) {
+class Entity(val dataSource: DataSource, val entityRelationMapping: EntityRelationMapping) {
 
     private val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
 
@@ -17,6 +17,9 @@ class Entity(val dataSource: DataSource) {
     private fun getColumnNames(firstRow: Map<String, Any>): List<String> {
         return firstRow.keys.toList()
     }
+
+
+
 
     fun saveBatch(entityName: String, data: List<Map<String, Any>>): IntArray {
         val firstRow = data.first()
