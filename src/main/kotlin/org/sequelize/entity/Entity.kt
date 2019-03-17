@@ -5,7 +5,7 @@ import java.sql.SQLException
 import javax.sql.DataSource
 
 
-class Entity(val dataSource: DataSource, val entityRelationMapping: EntityRelationMapping) {
+class Entity(val dataSource: DataSource, private val entityRelationMapping: Map<String, Table>) {
 
     private val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
 
@@ -18,14 +18,24 @@ class Entity(val dataSource: DataSource, val entityRelationMapping: EntityRelati
         return firstRow.keys.toList()
     }
 
+    fun saveOrUpdateOne(entityName: String, data: Map<String, Any>) {
+        val columnNames = getColumnNames(data)
+        val namedArguments = generateNamedArguments(columnNames)
+        val pk = entityRelationMapping[entityName]?.primaryKey
+        val compoundKeys = entityRelationMapping[entityName]?.compoundPrimaryKeys
+        val compoundWhereConstruct =
+            if (compoundKeys != null) generateWhereConstructForCompoundKeys(compoundKeys) else " WHERE $pk = :$pk"
+    }
 
+    private fun generateWhereConstructForCompoundKeys(compoundKeys: List<String>): String {
+        return " WHERE " + compoundKeys.joinToString(" AND ") { "$it=:$it" }
+    }
 
 
     fun saveBatch(entityName: String, data: List<Map<String, Any>>): IntArray {
-        val firstRow = data.first()
-        val columnNames = getColumnNames(firstRow)
-        val namesArguments = generateNamedArguments(columnNames)
-        val queryStatement = "INSERT INTO $entityName (${columnNames.joinToString(",")}) VALUES ($namesArguments)"
+        val columnNames = getColumnNames(data.first())
+        val namedArguments = generateNamedArguments(columnNames)
+        val queryStatement = "INSERT INTO $entityName (${columnNames.joinToString(",")}) VALUES ($namedArguments)"
         var results: IntArray = intArrayOf()
         val connection = namedParameterJdbcTemplate.jdbcTemplate.dataSource?.connection
         try {
