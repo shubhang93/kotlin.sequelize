@@ -30,6 +30,15 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         return results
     }
 
+    fun getQuery(queryName: String): String? {
+        return queryMap[queryName]
+    }
+
+
+    fun getQueryList(vararg queryNames: String): List<String?> {
+        return queryNames.map { queryMap[it] }.filter { it != null }
+    }
+
     fun getQueryResults(queryName: String, arguments: Map<String, Any>?): ArrayList<Map<String, Any>>? {
         val queryStmt = queryMap[queryName]
         if (queryStmt != null && arguments != null) {

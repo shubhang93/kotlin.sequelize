@@ -25,6 +25,9 @@ class Entity(val dataSource: DataSource, private val entityRelationMapping: Map<
         val compoundKeys = entityRelationMapping[entityName]?.compoundPrimaryKeys
         val compoundWhereConstruct =
             if (compoundKeys != null) generateWhereConstructForCompoundKeys(compoundKeys) else " WHERE $pk = :$pk"
+        val selectStmt = "SELECT * FROM $entityName$compoundWhereConstruct"
+
+
     }
 
     private fun generateWhereConstructForCompoundKeys(compoundKeys: List<String>): String {

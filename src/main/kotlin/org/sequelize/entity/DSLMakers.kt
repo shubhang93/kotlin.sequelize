@@ -9,6 +9,7 @@ private fun Map<String, Table>.toImmutableMap(): Map<String, Table> {
     return mapOf(*pairs.toTypedArray())
 }
 
+
 data class Table(
     val tableName: String,
     val primaryKey: String,
