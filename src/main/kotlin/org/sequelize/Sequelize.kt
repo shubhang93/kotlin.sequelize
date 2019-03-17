@@ -1,5 +1,6 @@
 package org.sequelize
 
+import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 import java.sql.ResultSet
 import java.sql.ResultSetMetaData

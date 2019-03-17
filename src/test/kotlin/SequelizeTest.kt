@@ -7,7 +7,7 @@ import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
 import org.sequelize.entity.Table
 import org.sequelize.entity.entityRelationMapping
-import org.sequelize.extractQueryMap
+import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 const val PATH = "/Users/shubhangb/kotlin.sequelize/src/test/resources"

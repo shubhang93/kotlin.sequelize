@@ -1,4 +1,4 @@
-package org.sequelize
+package org.sequelize.util
 
 import java.io.File
 
