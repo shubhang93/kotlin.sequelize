@@ -15,8 +15,8 @@ data class Table(
     val primaryKey: String,
     val childEntity: String?,
     val foreignKey: String?,
-    val compoundPrimaryKeys: List<String>,
-    val nullableColumns: List<String>
+    val compoundPrimaryKeys: List<String>?,
+    val nullableColumns: List<String>?
 )
 
 @EntityRelationMappingDSL
@@ -25,8 +25,8 @@ class TableBuilder {
     var primaryKey = ""
     var foreignKey: String? = null
     var childTable: String? = null
-    var compoundKeys = listOf<String>()
-    var nullColumns: List<String> = listOf()
+    var compoundKeys: List<String>? = null
+    var nullColumns: List<String>? = null
 
 
     fun build(): Table {

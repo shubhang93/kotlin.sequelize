@@ -5,7 +5,7 @@ import java.sql.SQLException
 import javax.sql.DataSource
 
 
-class Entity(val dataSource: DataSource, private val entityRelationMapping: Map<String, Table>) {
+class Entity(dataSource: DataSource, private val entityRelationMapping: Map<String, Table>) {
 
     private val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(dataSource)
 
@@ -26,6 +26,8 @@ class Entity(val dataSource: DataSource, private val entityRelationMapping: Map<
         val compoundWhereConstruct =
             if (compoundKeys != null) generateWhereConstructForCompoundKeys(compoundKeys) else " WHERE $pk = :$pk"
         val selectStmt = "SELECT * FROM $entityName$compoundWhereConstruct"
+
+        println("Select Stmt --> $selectStmt")
 
 
     }
