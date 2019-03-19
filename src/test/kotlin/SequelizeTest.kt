@@ -21,6 +21,7 @@ class SequelizeTest {
 
     @Test
     fun testQueryMapGeneration() {
+        println("Queries Path --> $PATH")
         val qm = extractQueryMap(PATH)
         Assert.assertTrue(qm.size > 1)
     }
