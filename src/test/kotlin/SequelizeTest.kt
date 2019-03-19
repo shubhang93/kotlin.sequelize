@@ -4,9 +4,6 @@ import org.junit.BeforeClass
 import org.junit.Test
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
-import org.sequelize.entity.Entity
-import org.sequelize.entity.Table
-import org.sequelize.entity.entityRelationMapping
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
@@ -31,32 +28,18 @@ class SequelizeTest {
 
     companion object {
         private lateinit var sequelize: Sequelize
-        private lateinit var entity: Entity
-        private lateinit var entityRelationMapping: Map<String, Table>
-        val keys = listOf<String>("PRODUCT_CODE", "PRODUCT_NAME")
+        val keys = listOf<String>("product_code", "product_code")
         @BeforeClass
         @JvmStatic
         fun setUpDB() {
             val ds = JdbcDataSource()
             ds.password = ""
             ds.user = "sa"
-            ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test"
-
-            entityRelationMapping = entityRelationMapping {
-                table {
-                    name = "product"
-                    primaryKey = "id"
-                }
-
-                table {
-                    name = "brand"
-                    primaryKey = "brand_code"
-                }
-            }
+            ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test;IGNORECASE=TRUE;MODE=MYSQL"
 
 
             val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
-            entity = Entity(dataSource = ds, entityRelationMapping = entityRelationMapping)
+
 
             val products = arrayOf<Map<String, Any>>(
                 mutableMapOf("PRODUCT_NAME" to "SOAP", "PRODUCT_CODE" to "P1234"),
@@ -76,7 +59,7 @@ class SequelizeTest {
             val placeholders = "?".repeat(rows.first().size).split("").filter { it != "" }.joinToString(",")
             val columnNames = products.first().keys.toList().joinToString(",")
 
-            namedParameterJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS product(id int auto_increment primary key,product_code varchar(255),product_name varchar(255));") { it.execute() }
+            namedParameterJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS product(id int auto_increment,product_code varchar(255) primary key,product_name varchar(255));") { it.execute() }
 
             namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
 
@@ -88,21 +71,6 @@ class SequelizeTest {
 
 
         }
-    }
-
-    @Test
-    fun testEntityRelationMappingDSL() {
-
-        val result = entityRelationMapping["product"]
-        val expectedResult =
-            Table(
-                "product",
-                "id",
-                null, null, null, null
-            )
-
-        Assert.assertEquals(expectedResult, result)
-
     }
 
 
@@ -151,51 +119,5 @@ class SequelizeTest {
         Assert.assertEquals(expectedResult, result.map { it.filterKeys { keys.contains(it) } })
     }
 
-
-    private fun insertNewRecordsUsingEntityClass() {
-        val data = listOf<Map<String, Any>>(
-            mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
-            mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
-        )
-        val result = entity.saveBatch("product", data)
-    }
-
-    @Test
-    fun testIfNewRecordsAreSavedUsingEntityClass() {
-        insertNewRecordsUsingEntityClass()
-        val expectedResult = listOf<Map<String, Any>>(
-            mapOf("PRODUCT_CODE" to "P9099", "PRODUCT_NAME" to "SCRUBBER"),
-            mapOf("PRODUCT_CODE" to "P8078", "PRODUCT_NAME" to "LIQUIFIED GAS")
-        )
-        val result = sequelize.fetchResults {
-            queryName = "productsInQuery"
-            params = mapOf("productCodes" to listOf("P8078", "P9099"))
-        }
-
-        Assert.assertEquals(expectedResult, result.map { it.filterKeys { keys.contains(it) } })
-    }
-
-    @Test
-    fun testTransactionalBehaviourOfSaveBatch() {
-        val data = listOf<Map<String, Any>>(
-            mapOf("PRODUCT_CODE" to "P4532", "PRODUCT_NAME" to "BREAD"),
-            mapOf("PRODUCT_CODE" to "5691", "PRODUCT_NAE" to "KNIFE")
-        )
-
-        val rowCount = entity.saveBatch("product", data)
-        val results = sequelize.fetchResults {
-            queryName = QueryName.PRODUCT_WITH_ARG.queryName
-            params = mapOf("productCode" to "P4532")
-        }
-
-        val expectedResult = arrayListOf<Map<String, Any>>()
-        Assert.assertEquals(expectedResult, results)
-    }
-
-    @Test
-    fun testSingleRecordSaving() {
-        val row = mapOf<String, Any>("PRODUCT_CODE" to "P45678", "PRODUCT_NAME" to "OIL")
-        entity.saveOrUpdateOne("product", row)
-    }
 
 }
