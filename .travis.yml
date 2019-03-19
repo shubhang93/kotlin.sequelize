@@ -15,7 +15,7 @@ before_cache:
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 env:
-  - QURIES_PATH=$TRAVIS_BUILD_DIR/shubhang93/kotlin.sequelize/src/test/resources/sql
+  - QUERIES_PATH=$TRAVIS_BUILD_DIR/shubhang93/kotlin.sequelize/src/test/resources/sql
 
 cache:
   directories:
