@@ -5,6 +5,7 @@ jdk:
   - oraclejdk8
 
 before_script:
+  - cd $TRAVIS_BUILD_DIR
   - rm -rf ./src/test/resources/test.h2.db
 
 script:
@@ -15,7 +16,7 @@ before_cache:
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
 env:
-  - QURIES_PATH=./src/test/resources/sql
+  - QURIES_PATH=$TRAVIS_BUILD_DIR/src/test/resources/sql
 
 cache:
   directories:

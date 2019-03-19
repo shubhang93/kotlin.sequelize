@@ -22,11 +22,13 @@ dependencies {
     testCompile group: 'com.h2database', name: 'h2', version: '1.3.148'
 }
 
-buildScan {
-    licenseAgreementUrl = "https://gradle.com/terms-of-service"
-    licenseAgree = "yes"
-}
+if (hasProperty('buildScan')) {
+    buildScan {
+        licenseAgreementUrl = "https://gradle.com/terms-of-service"
+        licenseAgree = "yes"
+    }
 
+}
 
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
