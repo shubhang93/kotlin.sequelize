@@ -1,5 +1,7 @@
-#kotlin.sequelize
+#kotlin.sequelize 
 A Library that lets you run SQL queries directly from .sql files
+
+[![Build Status](https://travis-ci.com/shubhang93/kotlin.sequelize.svg?branch=master)](https://travis-ci.com/shubhang93/kotlin.sequelize)
 
 ## Motivation
 * SQL in itself is an extremely matured DSL and providing wrappers around SQL to query data can sometimes be a cumbersome process.The real beauty of sql lies in joins which feels very fluent when written as a query.
