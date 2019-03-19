@@ -4,6 +4,9 @@ install: true
 jdk:
   - oraclejdk8
 
+before_script:
+  - rm -rf src/test/resources/test.h2.db
+
 script:
   - ./gradlew build --scan -s
 
@@ -17,4 +20,4 @@ cache:
     - $HOME/.gradle/wrapper/
 
 after_success:
-  - bash < (curl -s https://codecov.io/bash) -t be62456b-0be6-4b5d-825c-23664fb1ce84
+  - bash <(curl -s https://codecov.io/bash) -t be62456b-0be6-4b5d-825c-23664fb1ce84
