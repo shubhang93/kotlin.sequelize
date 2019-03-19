@@ -27,7 +27,11 @@ if (hasProperty('buildScan')) {
         licenseAgreementUrl = "https://gradle.com/terms-of-service"
         licenseAgree = "yes"
     }
+}
 
+test {
+    testLogging.showStandardStreams = true
+    testLogging.exceptionFormat = 'full'
 }
 
 compileKotlin {

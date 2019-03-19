@@ -67,6 +67,8 @@ class SequelizeTest {
 
             namedParameterJdbcTemplate.jdbcTemplate.batchUpdate(insertStatement, rows)
 
+            println("PATH -> $PATH")
+
             sequelize = Sequelize(ds, PATH)
 
 

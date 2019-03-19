@@ -8,14 +8,12 @@ before_script:
   - rm -rf $TRAVIS_BUILD_DIR/shubhang93/kotlin.sequelize/src/test/resources/test.h2.db
 
 script:
-  - ./gradlew build --scan -s
+  - QUERIES_PATH=$TRAVIS_BUILD_DIR/shubhang93/kotlin.sequelize/src/test/resources/sql ./gradlew build --scan -s
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
 
-env:
-  - QUERIES_PATH=$TRAVIS_BUILD_DIR/shubhang93/kotlin.sequelize/src/test/resources/sql
 
 cache:
   directories:
