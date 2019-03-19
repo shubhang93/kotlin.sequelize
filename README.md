@@ -1,4 +1,4 @@
-#kotlin.sequelize 
+# kotlin.sequelize 
 A Library that lets you run SQL queries directly from .sql files
 
 [![Build Status](https://travis-ci.com/shubhang93/kotlin.sequelize.svg?branch=master)](https://travis-ci.com/shubhang93/kotlin.sequelize)
