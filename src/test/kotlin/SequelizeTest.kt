@@ -7,7 +7,7 @@ import org.sequelize.dsl.fetchResults
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
-const val PATH = "/Users/shubhangb/kotlin.sequelize/src/test/resources"
+val PATH = System.getenv("QUERIES_PATH") ?: "/Users/shubhangb/kotlin.sequelize/src/test/resources/sql"
 
 enum class QueryName(val queryName: String) {
     PRODUCT("product"),

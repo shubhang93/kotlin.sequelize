@@ -5,7 +5,7 @@ jdk:
   - oraclejdk8
 
 before_script:
-  - rm -rf src/test/resources/test.h2.db
+  - rm -rf ./src/test/resources/test.h2.db
 
 script:
   - ./gradlew build --scan -s
@@ -13,6 +13,9 @@ script:
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+env:
+  - QURIES_PATH=./src/test/resources/sql
 
 cache:
   directories:
