@@ -9,10 +9,13 @@ import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 val PATH = System.getenv("QUERIES_PATH") ?: "/Users/shubhangb/kotlin.sequelize/src/test/resources/sql"
 
-enum class QueryName(val queryName: String) {
-    PRODUCT("product"),
-    PRODUCT_WITH_ARG("productWithArg"),
-    PRODUCT_IN_QUERY("productsInQuery")
+enum class QueryName {
+    testInQueryWithListArgs,
+    testSingleRowFetch,
+    testWithArgs,
+    simpleTest
+
+
 }
 
 
@@ -81,7 +84,7 @@ class SequelizeTest {
             arrayListOf(mapOf("product_code" to "P1234", "product_name" to "SOAP"))
 
         val results: ArrayList<Map<String, Any>> = sequelize.fetch {
-            queryName = QueryName.PRODUCT.queryName
+            queryName = QueryName.testWithArgs.name
             params = mapOf("productCode" to "P1234")
         }
         Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key) } })
@@ -95,7 +98,7 @@ class SequelizeTest {
         )
 
         val result = sequelize.fetch {
-            queryName = QueryName.PRODUCT_WITH_ARG.queryName
+            queryName = QueryName.testWithArgs.name
             params = mapOf("productCode" to "P7890")
         }[0]
 
@@ -108,7 +111,7 @@ class SequelizeTest {
     @Test
     fun testInQueryBehaviourWithListParam() {
         val result = sequelize.fetch {
-            queryName = QueryName.PRODUCT_IN_QUERY.queryName
+            queryName = QueryName.testInQueryWithListArgs.name
             params = mapOf("productCodes" to listOf("P1214", "P8901"))
         }
 
@@ -131,12 +134,12 @@ class SequelizeTest {
 
         val result =
             sequelize.fetch(
-                queryName = QueryName.PRODUCT_WITH_ARG.queryName,
+                queryName = QueryName.testWithArgs.name,
                 params = mapOf("productCode" to "P7890")
             )[0]
 
         Assert.assertEquals(expected, result.filterKeys { keys.contains(it) })
-
     }
+
 
 }
