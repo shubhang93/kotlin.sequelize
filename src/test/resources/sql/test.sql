@@ -1,5 +1,5 @@
 -- name: productsInQuery
 select *
 from product
-where PRODUCT_CODE in (:productCodes);
+where product_code in (:productCodes);
 

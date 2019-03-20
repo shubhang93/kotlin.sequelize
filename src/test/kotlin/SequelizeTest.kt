@@ -35,8 +35,7 @@ class SequelizeTest {
             val ds = JdbcDataSource()
             ds.password = ""
             ds.user = "sa"
-            ds.url =
-                "jdbc:h2:mem:test;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;IGNORECASE=TRUE"
+            ds.url = "jdbc:h2:mem:test;MODE=MySQL;DATABASE_TO_UPPER=FALSE;IGNORECASE=TRUE;DB_CLOSE_DELAY=-1"
 
 
             val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
@@ -60,9 +59,8 @@ class SequelizeTest {
             val placeholders = "?".repeat(rows.first().size).split("").filter { it != "" }.joinToString(",")
             val columnNames = products.first().keys.toList().joinToString(",")
 
-            namedParameterJdbcTemplate.execute("CREATE TABLE IF NOT EXISTS product(id int auto_increment,product_code varchar(255) primary key,product_name varchar(255));") { it.execute() }
+            namedParameterJdbcTemplate.execute("CREATE TABLE product(id int auto_increment,product_code varchar(255) primary key,product_name varchar(255));") { it.execute() }
 
-            namedParameterJdbcTemplate.execute("TRUNCATE TABLE product;") { it.execute() }
 
             val insertStatement = "INSERT INTO product ($columnNames) VALUES($placeholders)".toString()
 
@@ -86,7 +84,7 @@ class SequelizeTest {
             queryName = QueryName.PRODUCT.queryName
             params = mapOf("productCode" to "P1234")
         }
-        Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key.toLowerCase()) } })
+        Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key) } })
     }
 
     @Test
@@ -103,7 +101,7 @@ class SequelizeTest {
 
 
 
-        Assert.assertEquals(expectedResult, result.filterKeys { keys.contains(it.toLowerCase()) })
+        Assert.assertEquals(expectedResult, result.filterKeys { keys.contains(it) })
 
     }
 
@@ -119,8 +117,26 @@ class SequelizeTest {
             mapOf("product_code" to "P8901", "product_name" to "TOOTH PASTE")
         )
 
-        Assert.assertEquals(expectedResult, result.map { row -> row.filterKeys { keys.contains(it.toLowerCase()) } })
+        Assert.assertEquals(expectedResult, result.map { row -> row.filterKeys { keys.contains(it) } })
     }
 
+
+    @Test
+    fun testNoDSLSequilizeAPI() {
+
+        val expected = mapOf<String, Any>(
+            "product_code" to "P7890",
+            "product_name" to "LIGHTER"
+        )
+
+        val result =
+            sequelize.fetchResults(
+                queryName = QueryName.PRODUCT_WITH_ARG.queryName,
+                params = mapOf("productCode" to "P7890")
+            )[0]
+
+        Assert.assertEquals(expected, result.filterKeys { keys.contains(it) })
+
+    }
 
 }

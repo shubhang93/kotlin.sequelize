@@ -30,7 +30,9 @@ fun Sequelize.fetchResults(block: QueryParamBuilder.() -> Unit): ArrayList<Map<S
     return getQueryResults(queryParam.queryName, queryParam.params) ?: arrayListOf()
 }
 
-
+fun Sequelize.fetchResults(queryName: String, params: Map<String, Any>? = null): ArrayList<Map<String, Any>> {
+    return getQueryResults(queryName, params) ?: arrayListOf()
+}
 
 
 
