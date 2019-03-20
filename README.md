@@ -4,6 +4,7 @@ A Library that lets you run SQL queries directly from .sql files
 [![Build Status](https://travis-ci.com/shubhang93/kotlin.sequelize.svg?branch=master)](https://travis-ci.com/shubhang93/kotlin.sequelize)
 
 ## Motivation
+* Inspired by yesql, a Clojure library.
 * SQL in itself is an extremely matured DSL and providing wrappers around SQL to query data can sometimes be a cumbersome process.The real beauty of sql lies in joins which feels very fluent when written as a query.
 * Most of the common REST API(s) return a stringified list of map, which in my SQL can be viewed as a bunch records.
 * Testability, your queries can be writing in .sql files with full syntax highlighting support and can be tested on live database instances.
@@ -11,8 +12,7 @@ A Library that lets you run SQL queries directly from .sql files
 
 ## What this library does not offer
 * Type checking of your result set, everything returned by this library is a list of maps.
-* Would not recommend this library to perform transactional Database operations.
-* This library is mostly meant to read data from your database with full SQL support, any sort of write operations might not work as expected, highly recommend using an ORM.
+* There are no DAOs, Domain classes, results returned by this library are plain list of maps.
 
 
 
