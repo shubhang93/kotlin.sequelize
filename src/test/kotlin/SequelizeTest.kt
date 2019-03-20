@@ -35,7 +35,8 @@ class SequelizeTest {
             val ds = JdbcDataSource()
             ds.password = ""
             ds.user = "sa"
-            ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test;IGNORECASE=TRUE;MODE=MYSQL"
+            ds.url =
+                "jdbc:h2:mem:test;MODE=MySQL;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE;IGNORECASE=TRUE"
 
 
             val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
