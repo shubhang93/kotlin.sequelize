@@ -4,6 +4,7 @@ import org.junit.BeforeClass
 import org.junit.Test
 import org.sequelize.Sequelize
 import org.sequelize.dsl.fetch
+import org.sequelize.dsl.fetchOne
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
@@ -28,6 +29,8 @@ class SequelizeTest {
         Assert.assertTrue(qm.size > 1)
     }
 
+
+    val removeIdFromResultMaps = { row: Map<String, Any> -> row.filterKeys { it -> keys.contains(it) } }
 
     companion object {
         private lateinit var sequelize: Sequelize
@@ -87,7 +90,7 @@ class SequelizeTest {
             queryName = QueryName.testWithArgs.name
             params = mapOf("productCode" to "P1234")
         }
-        Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key) } })
+        Assert.assertEquals(expectedResult, results.map { removeIdFromResultMaps(it) })
     }
 
     @Test
@@ -104,7 +107,7 @@ class SequelizeTest {
 
 
 
-        Assert.assertEquals(expectedResult, result.filterKeys { keys.contains(it) })
+        Assert.assertEquals(expectedResult, removeIdFromResultMaps(result))
 
     }
 
@@ -120,7 +123,7 @@ class SequelizeTest {
             mapOf("product_code" to "P8901", "product_name" to "TOOTH PASTE")
         )
 
-        Assert.assertEquals(expectedResult, result.map { row -> row.filterKeys { keys.contains(it) } })
+        Assert.assertEquals(expectedResult, result.map { removeIdFromResultMaps(it) })
     }
 
 
@@ -138,8 +141,18 @@ class SequelizeTest {
                 params = mapOf("productCode" to "P7890")
             )[0]
 
-        Assert.assertEquals(expected, result.filterKeys { keys.contains(it) })
+        Assert.assertEquals(expected, removeIdFromResultMaps(result))
     }
 
+    @Test
+    fun testSingleRecordFetch() {
+        val expected = mapOf<String, Any>("product_code" to "P1234", "product_name" to "SOAP")
+        val result =
+            sequelize.fetchOne(queryName = QueryName.testSingleRowFetch.name, params = mapOf("productCode" to "P1234"))
+
+        if (result != null)
+            Assert.assertEquals(expected, removeIdFromResultMaps(result))
+
+    }
 
 }
