@@ -7,8 +7,11 @@ jdk:
 before_script:
   - rm -rf $TRAVIS_BUILD_DIR/src/test/resources/test.h2.db
 
+env:
+  - QUERIES_PATH=$TRAVIS_BUILD_DIR/src/test/resources/sql
+
 script:
-  - QUERIES_PATH=$TRAVIS_BUILD_DIR/src/test/resources/sql ./gradlew build --scan -s
+  - ./gradlew build --scan -s
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -21,4 +24,5 @@ cache:
     - $HOME/.gradle/wrapper/
 
 after_success:
+  -
   - bash <(curl -s https://codecov.io/bash) -t be62456b-0be6-4b5d-825c-23664fb1ce84
