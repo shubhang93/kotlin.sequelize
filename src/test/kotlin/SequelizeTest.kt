@@ -28,7 +28,7 @@ class SequelizeTest {
 
     companion object {
         private lateinit var sequelize: Sequelize
-        val keys = listOf<String>("product_code", "product_code")
+        val keys = listOf<String>("product_code", "product_name")
         @BeforeClass
         @JvmStatic
         fun setUpDB() {
@@ -42,13 +42,13 @@ class SequelizeTest {
 
 
             val products = arrayOf<Map<String, Any>>(
-                mutableMapOf("PRODUCT_NAME" to "SOAP", "PRODUCT_CODE" to "P1234"),
-                mutableMapOf("PRODUCT_NAME" to "SHAMPOO", "PRODUCT_CODE" to "P5678"),
-                mutableMapOf("PRODUCT_NAME" to "LIGHTER", "PRODUCT_CODE" to "P7890"),
-                mutableMapOf("PRODUCT_NAME" to "KLEENX", "PRODUCT_CODE" to "P9871"),
-                mutableMapOf("PRODUCT_NAME" to "CUP", "PRODUCT_CODE" to "P9451"),
-                mutableMapOf("PRODUCT_NAME" to "BRUSH", "PRODUCT_CODE" to "P1214"),
-                mutableMapOf("PRODUCT_NAME" to "TOOTH PASTE", "PRODUCT_CODE" to "P8901")
+                mutableMapOf("product_name" to "SOAP", "product_code" to "P1234"),
+                mutableMapOf("product_name" to "SHAMPOO", "product_code" to "P5678"),
+                mutableMapOf("product_name" to "LIGHTER", "product_code" to "P7890"),
+                mutableMapOf("product_name" to "KLEENX", "product_code" to "P9871"),
+                mutableMapOf("product_name" to "CUP", "product_code" to "P9451"),
+                mutableMapOf("product_name" to "BRUSH", "product_code" to "P1214"),
+                mutableMapOf("product_name" to "TOOTH PASTE", "product_code" to "P8901")
             )
 
             val rows = products.map {
@@ -79,20 +79,20 @@ class SequelizeTest {
     @Test
     fun testQueryWithParams() {
         val expectedResult: ArrayList<Map<String, Any>> =
-            arrayListOf(mapOf("PRODUCT_CODE" to "P1234", "PRODUCT_NAME" to "SOAP"))
+            arrayListOf(mapOf("product_code" to "P1234", "product_name" to "SOAP"))
 
         val results: ArrayList<Map<String, Any>> = sequelize.fetchResults {
             queryName = QueryName.PRODUCT.queryName
             params = mapOf("productCode" to "P1234")
         }
-        Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key) } })
+        Assert.assertEquals(expectedResult, results.map { it.filterKeys { key -> keys.contains(key.toLowerCase()) } })
     }
 
     @Test
     fun testQueryWithParams2() {
         val expectedResult = mapOf<String, Any>(
-            "PRODUCT_CODE" to "P7890",
-            "PRODUCT_NAME" to "LIGHTER"
+            "product_code" to "P7890",
+            "product_name" to "LIGHTER"
         )
 
         val result = sequelize.fetchResults {
@@ -102,7 +102,7 @@ class SequelizeTest {
 
 
 
-        Assert.assertEquals(expectedResult, result.filterKeys { keys.contains(it) })
+        Assert.assertEquals(expectedResult, result.filterKeys { keys.contains(it.toLowerCase()) })
 
     }
 
@@ -114,11 +114,11 @@ class SequelizeTest {
         }
 
         val expectedResult = arrayListOf<Map<String, Any>>(
-            mapOf("PRODUCT_CODE" to "P1214", "PRODUCT_NAME" to "BRUSH"),
-            mapOf("PRODUCT_CODE" to "P8901", "PRODUCT_NAME" to "TOOTH PASTE")
+            mapOf("product_code" to "P1214", "product_name" to "BRUSH"),
+            mapOf("product_code" to "P8901", "product_name" to "TOOTH PASTE")
         )
 
-        Assert.assertEquals(expectedResult, result.map { it.filterKeys { keys.contains(it) } })
+        Assert.assertEquals(expectedResult, result.map { row -> row.filterKeys { keys.contains(it.toLowerCase()) } })
     }
 
 

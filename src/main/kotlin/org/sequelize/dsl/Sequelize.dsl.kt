@@ -3,7 +3,6 @@ package org.sequelize.dsl
 import org.sequelize.Sequelize
 
 
-
 @DslMarker
 annotation class SequelizeDSL
 
@@ -21,7 +20,6 @@ class QueryParamBuilder {
         return QueryParam(queryName, params)
 
     }
-
 
 
 }
