@@ -6,11 +6,11 @@ import org.sequelize.Sequelize
 import org.sequelize.dsl.fetchResults
 import org.sequelize.entity.Entity
 import org.sequelize.entity.Table
-import org.sequelize.entity.entityRelationMapping
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
 const val PATH = "/Users/shubhangb/kotlin.sequelize/src/test/resources"
+const val CONN_STRING = "jdbc:h2:mem:test_db;IGNORECASE=TRUE;DATABASE_TO_LOWER=TRUE;CASE_INSENSITIVE_IDENTIFIERS=TRUE"
 
 enum class QueryName(val queryName: String) {
     PRODUCT("product"),
@@ -40,19 +40,7 @@ class SequelizeTest {
             val ds = JdbcDataSource()
             ds.password = ""
             ds.user = "sa"
-            ds.url = "jdbc:h2:~/kotlin.sequelize/src/test/resources/test"
-
-            entityRelationMapping = entityRelationMapping {
-                table {
-                    name = "product"
-                    primaryKey = "id"
-                }
-
-                table {
-                    name = "brand"
-                    primaryKey = "brand_code"
-                }
-            }
+            ds.url = CONN_STRING
 
 
             val namedParameterJdbcTemplate = NamedParameterJdbcTemplate(ds)
