@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0cb44c9-9d72-4fc8-a4af-79a58b63605b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/codecov.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -30,10 +30,6 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="test" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
@@ -46,13 +42,6 @@
         <item name="test" type="feb32156:DbDataSourceImpl" />
         <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
         <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="test" type="feb32156:DbDataSourceImpl" />
-        <item name="TEST: database" type="2aa06773:H2ImplModel$Database" />
-        <item name="PUBLIC: schema" type="7f85d983:H2ImplModel$Schema" />
-        <item name="PRODUCT: table" type="818c1b4a:H2ImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -62,51 +51,13 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="ExternalProjectsManager">
-    <system id="GRADLE">
-      <state>
-        <projects_view>
-          <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="kotlin.sequelize" type="f1a62948:ProjectNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="kotlin.sequelize" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="kotlin.sequelize" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="kotlin.sequelize" type="f1a62948:ProjectNode" />
-                <item name="Source Sets" type="e897c970:GradleViewContributor$SourceSetsNode" />
-                <item name="main" type="396b929e:GradleViewContributor$SourceSetNode" />
-                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
-              </path>
-            </expand>
-            <select />
-          </tree_state>
-        </projects_view>
-      </state>
-    </system>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="98">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-              <folding>
-                <element signature="e#23#214#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="161">
+              <caret line="25" column="102" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
             </state>
           </provider>
         </entry>
@@ -123,8 +74,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#28#87#0" expanded="true" />
               </folding>
@@ -135,17 +86,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+            <state relative-caret-position="176">
+              <caret line="127" column="38" lean-forward="true" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+            <state relative-caret-position="386">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
             </state>
           </provider>
         </entry>
@@ -153,8 +104,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+            <state relative-caret-position="315">
+              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/codecov.yaml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -171,8 +131,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>QUERY_SPLITTER_PATTERN</find>
-      <find>compile</find>
-      <find>Sequelize</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -194,42 +152,19 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console.sql" />
         <option value="$PROJECT_DIR$/src/main/kotlin/sequelize/fileUtils.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/sequelize/fileContentTransformer.kt" />
+        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/main.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/sequelize/Sequelize.kt" />
         <option value="$PROJECT_DIR$/src/sqlTest/test.sql" />
         <option value="$PROJECT_DIR$/src/sqlTest/test2.sql" />
         <option value="$PROJECT_DIR$/src/main/kotlin/sequelize/Sequelize.dsl.kt" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/IEntity.kt" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/07e03d50-c397-452e-82b4-24996b904b41/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/02ccf68a-93f6-4bc9-af85-7ff679c82e4b/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/02ccf68a-93f6-4bc9-af85-7ff679c82e4b/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console.sql" />
-        <option value="$PROJECT_DIR$/src/test/resources/test2.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_1.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
-        <option value="$PROJECT_DIR$/src/test/resources/test.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_3.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_2.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_4.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_5.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/eede1f84-1f00-46af-8c33-94bec901eeed/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/DSLModels.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/EntityRelationMapping.kt" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_2.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console.sql" />
+        <option value="$PROJECT_DIR$/src/test/resources/sql/test.sql" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/DSLMakers.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console_1.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_4.sql" />
-        <option value="$PROJECT_DIR$/.travil.yml" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_3.sql" />
-        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" />
-        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/codecov.yaml" />
       </list>
     </option>
   </component>
@@ -260,24 +195,16 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="mysql&#10;h2" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.Annotations" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="DatabaseDriversLRU" value="mysql&#10;h2.unified&#10;h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553018415886" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553100793358" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/test/resources/sql" />
-      <recent name="$PROJECT_DIR$/src/main/kotlin/org/sequelize/util" />
-    </key>
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -328,7 +255,7 @@
         <item itemvalue="JUnit.SequelizeTest" />
         <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="JUnit.SequelizeTest (1)" />
-        <item itemvalue="JUnit.SequelizeTest" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="JUnit.SequelizeTest (1)" />
       </list>
     </recent_temporary>
@@ -348,16 +275,7 @@
       <workItem from="1552059661684" duration="17153000" />
       <workItem from="1552127516899" duration="8247000" />
       <workItem from="1552498138573" duration="1674000" />
-      <workItem from="1552584748773" duration="428000" />
-      <workItem from="1552618140804" duration="291000" />
-      <workItem from="1552663919273" duration="7780000" />
-      <workItem from="1552675632538" duration="1034000" />
-      <workItem from="1552712761886" duration="5981000" />
-      <workItem from="1552719490029" duration="387000" />
-      <workItem from="1552721072788" duration="6284000" />
-      <workItem from="1552743458361" duration="596000" />
-      <workItem from="1552827327421" duration="4625000" />
-      <workItem from="1553010895772" duration="6571000" />
+      <workItem from="1553097355111" duration="3261000" />
     </task>
     <task id="LOCAL-00001" summary="feat: remove dsl noise">
       <created>1552499449687</created>
@@ -373,287 +291,70 @@
       <option name="project" value="LOCAL" />
       <updated>1552499730239</updated>
     </task>
-    <task id="LOCAL-00003" summary="fix: use better tests">
-      <created>1552669284781</created>
+    <task id="LOCAL-00003" summary="fix: ds">
+      <created>1553097606197</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1552669284782</updated>
+      <updated>1553097606197</updated>
     </task>
-    <task id="LOCAL-00004" summary="fix: tests">
-      <created>1552672245773</created>
+    <task id="LOCAL-00004" summary="fix: ds">
+      <created>1553097849492</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1552672245773</updated>
+      <updated>1553097849492</updated>
     </task>
-    <task id="LOCAL-00005" summary="feat: migrate to JUNIT 5">
-      <created>1552719041732</created>
+    <task id="LOCAL-00005" summary="fix: tests">
+      <created>1553100454810</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1552719041733</updated>
+      <updated>1553100454810</updated>
     </task>
-    <task id="LOCAL-00006" summary="feat: save in transaction">
-      <created>1552720133012</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1552720133012</updated>
-    </task>
-    <task id="LOCAL-00007" summary="feat: add entity relation mapping DSL">
-      <created>1552726114572</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1552726114572</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix: move DSL Makers to new modules">
-      <created>1552726285828</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1552726285828</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feat: update DSL to use infix funs">
-      <created>1552726930310</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1552726930310</updated>
-    </task>
-    <task id="LOCAL-00010" summary="fix: remove infix notations">
-      <created>1552727498626</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1552727498626</updated>
-    </task>
-    <task id="LOCAL-00011" summary="fix: typo">
-      <created>1552737343636</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1552737343636</updated>
-    </task>
-    <task id="LOCAL-00012" summary="fix: pass constructor args in the right order">
-      <created>1552737597365</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1552737597365</updated>
-    </task>
-    <task id="LOCAL-00013" summary="fix: tests">
-      <created>1552737672204</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1552737672204</updated>
-    </task>
-    <task id="LOCAL-00014" summary="fix: move test setup to companion object">
-      <created>1552737981104</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1552737981104</updated>
-    </task>
-    <task id="LOCAL-00015" summary="fix: give appropriate test method names">
-      <created>1552738202964</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1552738202964</updated>
-    </task>
-    <task id="LOCAL-00016" summary="fix: update tests">
-      <created>1552738304703</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1552738304703</updated>
-    </task>
-    <task id="LOCAL-00017" summary="fix: add required annotations">
-      <created>1552738486476</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1552738486476</updated>
-    </task>
-    <task id="LOCAL-00018" summary="feat: add new test">
-      <created>1552739161517</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1552739161517</updated>
-    </task>
-    <task id="LOCAL-00019" summary="feat: add support for entity relation mapping">
-      <created>1552827596338</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1552827596339</updated>
-    </task>
-    <task id="LOCAL-00020" summary="feat: add saveOrUpdate function">
-      <created>1552828401506</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1552828401506</updated>
-    </task>
-    <task id="LOCAL-00021" summary="feat: add query getters">
-      <created>1552841984974</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1552841984974</updated>
-    </task>
-    <task id="LOCAL-00022" summary="chore: move transformers to util pkg">
-      <created>1552842103700</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1552842103700</updated>
-    </task>
-    <task id="LOCAL-00023" summary="fix:tests">
-      <created>1552843226124</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1552843226124</updated>
-    </task>
-    <task id="LOCAL-00024" summary="refact: move result set tranformer to a new pkg">
-      <created>1552843261892</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1552843261892</updated>
-    </task>
-    <task id="LOCAL-00025" summary="fix: move new features to master fb branch">
-      <created>1553011365682</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1553011365684</updated>
-    </task>
-    <task id="LOCAL-00026" summary="feat: add Travis CI">
-      <created>1553011428106</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1553011428106</updated>
-    </task>
-    <task id="LOCAL-00027" summary="fix: typo">
-      <created>1553012027733</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1553012027733</updated>
-    </task>
-    <task id="LOCAL-00028" summary="feat: agree build scan license">
-      <created>1553012404220</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1553012404220</updated>
-    </task>
-    <task id="LOCAL-00029" summary="feat: update travis ci">
-      <created>1553012958838</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1553012958838</updated>
-    </task>
-    <task id="LOCAL-00030" summary="feat: update travis">
-      <created>1553013065975</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1553013065975</updated>
-    </task>
-    <task id="LOCAL-00031" summary="fix: update travis">
-      <created>1553013561466</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1553013561466</updated>
-    </task>
-    <task id="LOCAL-00032" summary="fix:travis paths">
-      <created>1553014729385</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1553014729385</updated>
-    </task>
-    <task id="LOCAL-00033" summary="feat: add log">
-      <created>1553014981294</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1553014981294</updated>
-    </task>
-    <task id="LOCAL-00034" summary="fix: paths">
-      <created>1553015525142</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1553015525142</updated>
-    </task>
-    <task id="LOCAL-00035" summary="fix: paths">
-      <created>1553015563452</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1553015563452</updated>
-    </task>
-    <task id="LOCAL-00036" summary="fix: typo">
-      <created>1553015982235</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1553015982235</updated>
-    </task>
-    <option name="localTasksCounter" value="37" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 41m 29s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 21h 44m 30s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 43m 35s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 21h 46m 09s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 49m 41s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 21h 51m 59s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 55m 31s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 12m 17s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 56m 01s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 18s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.17 at 22h 56m 59s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 33s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.19 at 21h 26m 56s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 58s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.19 at 22h 05m 30s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 14m 32s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.19 at 22h 14m 15s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 15m 13s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.19 at 23h 29m 02s.xml">
+    <history-entry file="SequelizeTest - 2019.03.20 at 22h 16m 23s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62651000" />
+    <option name="totallyTimeSpent" value="32511000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29685265" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3004292" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -662,15 +363,15 @@
       <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2955414" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3299363" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Database Console" order="9" weight="0.3057325" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.611465" />
+      <window_info anchor="bottom" id="Database Console" order="9" weight="0.3299363" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.42292994" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.42292994" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3299363" />
@@ -682,8 +383,8 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" weight="0.3297568" />
-      <window_info anchor="right" id="Database" order="7" weight="0.2360515" />
+      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Database" order="7" weight="0.3297568" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
@@ -733,33 +434,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
-    <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="feat: update DSL to use infix funs" />
-    <MESSAGE value="fix: remove infix notations" />
-    <MESSAGE value="fix: pass constructor args in the right order" />
+    <MESSAGE value="feat: remove dsl noise" />
+    <MESSAGE value="fix: data class props" />
+    <MESSAGE value="fix: ds" />
     <MESSAGE value="fix: tests" />
-    <MESSAGE value="fix: move test setup to companion object" />
-    <MESSAGE value="fix: give appropriate test method names" />
-    <MESSAGE value="fix: update tests" />
-    <MESSAGE value="fix: add required annotations" />
-    <MESSAGE value="feat: add new test" />
-    <MESSAGE value="feat: add support for entity relation mapping" />
-    <MESSAGE value="feat: add saveOrUpdate function" />
-    <MESSAGE value="feat: add query getters" />
-    <MESSAGE value="chore: move transformers to util pkg" />
-    <MESSAGE value="fix:tests" />
-    <MESSAGE value="refact: move result set tranformer to a new pkg" />
-    <MESSAGE value="fix: move new features to master fb branch" />
-    <MESSAGE value="feat: add Travis CI" />
-    <MESSAGE value="feat: agree build scan license" />
-    <MESSAGE value="feat: update travis ci" />
-    <MESSAGE value="feat: update travis" />
-    <MESSAGE value="fix: update travis" />
-    <MESSAGE value="fix:travis paths" />
-    <MESSAGE value="feat: add log" />
-    <MESSAGE value="fix: paths" />
-    <MESSAGE value="fix: typo" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: typo" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: tests" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console.sql">
@@ -773,13 +452,18 @@
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.6/380ef5226de2c85ff3b38cbfefeea881c5fce09d/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.class" />
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.6/380ef5226de2c85ff3b38cbfefeea881c5fce09d/mysql-connector-java-5.1.6.jar!/com/mysql/jdbc/jdbc2/optional/MysqlDataSource.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="115" column="21" selection-start-line="115" selection-start-column="21" selection-end-line="115" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/main.kt" />
     <entry file="file://$PROJECT_DIR$/src/sqlTest/test2.sql" />
     <entry file="file://$PROJECT_DIR$/src/sqlTest/test.sql" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/sequelize/fileUtils.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/sequelize/Sequelize.kt" />
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.21/b8815e48fb45e94821287365bd9ce8623f459ac7/kotlin-stdlib-1.3.21-sources.jar!/kotlin/Annotations.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/sequelize/Sequelize.dsl.kt" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -795,143 +479,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.0.6.RELEASE/5c7add116ad38bcecbf0f512353ace3ea577631e/spring-jdbc-5.0.6.RELEASE-sources.jar!/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/IEntity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/07e03d50-c397-452e-82b4-24996b904b41/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/02ccf68a-93f6-4bc9-af85-7ff679c82e4b/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/02ccf68a-93f6-4bc9-af85-7ff679c82e4b/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.exposed/exposed/0.13.3/42417f4fd4d731ba2a0b530f34ee968380ae9c67/exposed-0.13.3-sources.jar!/org/jetbrains/exposed/sql/transactions/ThreadLocalTransactionManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="59" column="74" selection-start-line="59" selection-start-column="72" selection-end-line="59" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../.gradle/wrapper/dists/gradle-4.10-all/54ye4nru8k2rpf7xwj15he4fo/gradle-4.10/src/core-api/org/gradle/api/artifacts/dsl/DependencyHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="110" column="56" selection-start-line="110" selection-start-column="49" selection-end-line="110" selection-end-column="56" />
-          <folding>
-            <element signature="e#0#16011#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../.sdkman/candidates/java/current/src.zip!/java/sql/Statement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="651" selection-start-line="651" selection-end-line="651" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_3.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="12" lean-forward="true" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_2.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_4.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/test.trace.db">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-43948" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/12a08ee9-8545-40c5-8515-d7f24e3c3c88/console_5.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/eede1f84-1f00-46af-8c33-94bec901eeed/console.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test2.sql">
+    <entry file="file://$PROJECT_DIR$/build/reports/tests/test/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/fileContentTransformer.kt" />
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.0.6.RELEASE/5c7add116ad38bcecbf0f512353ace3ea577631e/spring-jdbc-5.0.6.RELEASE-sources.jar!/org/springframework/jdbc/core/namedparam/NamedParameterJdbcTemplate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        <state relative-caret-position="405">
+          <caret line="64" column="13" selection-start-line="64" selection-start-column="13" selection-end-line="64" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test.sql">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_3.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="9" selection-end-column="24" />
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_2.sql">
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/generated/_Arrays.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="21" selection-start-column="21" selection-end-column="21" />
+        <state relative-caret-position="15">
+          <caret line="5593" column="35" selection-start-line="5593" selection-start-column="35" selection-end-line="5593" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_1.sql">
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.3.21/b8815e48fb45e94821287365bd9ce8623f459ac7/kotlin-stdlib-1.3.21-sources.jar!/kotlin/Annotations.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="22" selection-start-column="22" selection-end-column="22" />
+        <state relative-caret-position="787">
+          <caret line="162" column="24" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/fileUtils.kt" />
+    <entry file="jar://$PROJECT_DIR$/../.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-common/1.3.21/224a3bcfa1c088dd5d7c4a3958a68427b44c65dc/kotlin-stdlib-common-1.3.21-sources.jar!/kotlin/collections/Collections.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="387" column="65" lean-forward="true" selection-start-line="387" selection-start-column="65" selection-end-line="387" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/DSLMakers.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+        <state relative-caret-position="405">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/EntityRelationMapping.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console_1.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_4.sql">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/fileContentTransformer.kt">
       <provider selected="true" editor-type-id="text-editor">
@@ -940,68 +553,162 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
+    <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="36" column="126" selection-start-line="36" selection-start-column="126" selection-end-line="36" selection-end-column="126" />
+        <state relative-caret-position="570">
+          <caret line="38" column="1" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/f39ad3e3-6610-45e2-bb65-e9d5b7a28cbc/console_3.sql">
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/build/reports/tests/test/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1899" />
+        <state relative-caret-position="161">
+          <caret line="25" column="102" selection-start-line="25" selection-start-column="102" selection-end-line="25" selection-end-column="102" />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
           <folding>
             <element signature="e#28#87#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test2.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
-          <caret line="13" column="41" lean-forward="true" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
+    <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
-          <folding>
-            <element signature="e#23#214#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="75">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="83" column="31" selection-start-line="83" selection-start-column="31" selection-end-line="83" selection-end-column="31" />
+        <state relative-caret-position="176">
+          <caret line="127" column="38" lean-forward="true" selection-start-line="127" selection-start-column="38" selection-end-line="127" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="29" column="1" lean-forward="true" selection-start-line="29" selection-start-column="1" selection-end-line="29" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/codecov.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
         </state>
       </provider>
     </entry>
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Kotlin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>groovy-2.5.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>kotlin.sequelize</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: com.h2database:h2:1.3.148</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
