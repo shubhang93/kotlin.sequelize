@@ -14,6 +14,10 @@ A Library that lets you run SQL queries directly from .sql files
 * Type checking of your result set, everything returned by this library is a list of maps.
 * There are no DAOs, Domain classes, results returned by this library are plain list of maps.
 
+## Dependencies
+* This library uses Spring NamedJDBCTemplate to pass named arguments, this will enable us to add more features in future.
+
+
 
 
 ## How to Use
