@@ -3,7 +3,7 @@ import org.junit.Assert
 import org.junit.BeforeClass
 import org.junit.Test
 import org.sequelize.Sequelize
-import org.sequelize.dsl.fetchResults
+import org.sequelize.dsl.fetch
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 
@@ -80,7 +80,7 @@ class SequelizeTest {
         val expectedResult: ArrayList<Map<String, Any>> =
             arrayListOf(mapOf("product_code" to "P1234", "product_name" to "SOAP"))
 
-        val results: ArrayList<Map<String, Any>> = sequelize.fetchResults {
+        val results: ArrayList<Map<String, Any>> = sequelize.fetch {
             queryName = QueryName.PRODUCT.queryName
             params = mapOf("productCode" to "P1234")
         }
@@ -94,7 +94,7 @@ class SequelizeTest {
             "product_name" to "LIGHTER"
         )
 
-        val result = sequelize.fetchResults {
+        val result = sequelize.fetch {
             queryName = QueryName.PRODUCT_WITH_ARG.queryName
             params = mapOf("productCode" to "P7890")
         }[0]
@@ -107,7 +107,7 @@ class SequelizeTest {
 
     @Test
     fun testInQueryBehaviourWithListParam() {
-        val result = sequelize.fetchResults {
+        val result = sequelize.fetch {
             queryName = QueryName.PRODUCT_IN_QUERY.queryName
             params = mapOf("productCodes" to listOf("P1214", "P8901"))
         }
@@ -130,7 +130,7 @@ class SequelizeTest {
         )
 
         val result =
-            sequelize.fetchResults(
+            sequelize.fetch(
                 queryName = QueryName.PRODUCT_WITH_ARG.queryName,
                 params = mapOf("productCode" to "P7890")
             )[0]
