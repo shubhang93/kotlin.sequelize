@@ -3,8 +3,6 @@ import org.junit.Assert
 import org.junit.BeforeClass
 import org.junit.Test
 import org.sequelize.Sequelize
-import org.sequelize.dsl.fetch
-import org.sequelize.dsl.fetchOne
 import org.sequelize.util.extractQueryMap
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
 

@@ -1,5 +1,6 @@
 package org.sequelize
 
+import org.sequelize.dsl.QueryParamBuilder
 import org.sequelize.util.extractQueryMap
 import org.sequelize.util.resultSetTransformer
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate
@@ -23,7 +24,7 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
     }
 
 
-    fun getQueryResults(queryName: String, arguments: Map<String, Any>?): ArrayList<Map<String, Any>>? {
+    private fun getQueryResults(queryName: String, arguments: Map<String, Any>?): ArrayList<Map<String, Any>>? {
         val queryStmt = queryMap[queryName]
         return if (queryStmt != null && arguments != null) {
             namedParameterJdbcTemplate.execute(queryStmt, arguments) { ps ->
@@ -38,4 +39,24 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         } else
             throw Exception("$queryName query Not Found")
     }
+
+    fun fetch(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
+        val queryParam = QueryParamBuilder().apply(block).build()
+        return getQueryResults(queryParam.queryName, queryParam.params) ?: arrayListOf()
+    }
+
+    fun fetchOne(block: QueryParamBuilder.() -> Unit): Map<String, Any>? {
+        val queryParam = QueryParamBuilder().apply(block).build()
+        return getQueryResults(queryParam.queryName, queryParam.params)?.first()
+    }
+
+    fun fetch(queryName: String, params: Map<String, Any>? = null): ArrayList<Map<String, Any>> {
+        return getQueryResults(queryName, params) ?: arrayListOf()
+    }
+
+    fun fetchOne(queryName: String, params: Map<String, Any>? = null): Map<String, Any>? {
+        return getQueryResults(queryName, params)?.first()
+    }
+
+
 }

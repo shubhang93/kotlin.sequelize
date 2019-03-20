@@ -1,7 +1,5 @@
 package org.sequelize.dsl
 
-import org.sequelize.Sequelize
-
 
 @DslMarker
 annotation class SequelizeDSL
@@ -24,24 +22,7 @@ class QueryParamBuilder {
 }
 
 
-fun Sequelize.fetch(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
-    val queryParam = QueryParamBuilder().apply(block).build()
-    return getQueryResults(queryParam.queryName, queryParam.params) ?: arrayListOf()
-}
 
-fun Sequelize.fetchOne(block: QueryParamBuilder.() -> Unit): Map<String, Any>? {
-    val queryParam = QueryParamBuilder().apply(block).build()
-    return getQueryResults(queryParam.queryName, queryParam.params)?.first()
-}
-
-
-fun Sequelize.fetch(queryName: String, params: Map<String, Any>? = null): ArrayList<Map<String, Any>> {
-    return getQueryResults(queryName, params) ?: arrayListOf()
-}
-
-fun Sequelize.fetchOne(queryName: String, params: Map<String, Any>? = null): Map<String, Any>? {
-    return getQueryResults(queryName, params)?.first()
-}
 
 
 

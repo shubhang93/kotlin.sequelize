@@ -11,6 +11,7 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.21'
     id "com.jfrog.bintray" version "1.8.4"
 
+
 }
 
 version '1.0-SNAPSHOT'
@@ -38,13 +39,60 @@ if (hasProperty('buildScan')) {
     }
 }
 
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            id "shubhang93"
+            name "Shubhang B"
+            email "shubhang.sabbath@gmail.com"
+        }
+    }
+
+    scm {
+        url "https://github.com/thombergs/myAwesomeLib"
+    }
+}
+
+apply plugin: 'maven-publish'
+
+publishing {
+    publications {
+        mavenPublication(MavenPublication) {
+            from components.java
+            artifact sourcesJar {
+                classifier "sources"
+            }
+            artifact javadocJar {
+                classifier "javadoc"
+            }
+            groupId 'org.sequelize'
+            artifactId 'sequelize'
+            version '1.0.0'
+            pom.withXml {
+                def root = asNode()
+                root.appendNode('description', 'A Library that lets you run SQL from Kotlin directly from .sql files.')
+                root.appendNode('name', 'kotlin.sequelize')
+                root.appendNode('url', "https://github.com/shubhang93/kotlin.sequelize.git")
+                root.children().last() + pomConfig
+            }
+        }
+    }
+}
+
 
 bintray {
-    user = System.getProperty("BINTRAY_USER")
-    key = System.getProperty("BINTRAY_API_KEY")
+    user = "shubhang93"
+    key = "5b02da5239836cfe17dc116aec8f4e42d574cacc"
     publications = ['mavenPublication']
     pkg {
-        repo = "kotlin.sequelize"
+        repo = "kotlin"
         name = "kotlin.sequilize"
         userOrg = "shubhang93"
         licenses = ["Apache-2.0"]
