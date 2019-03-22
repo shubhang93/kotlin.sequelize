@@ -151,4 +151,11 @@ class SequelizeTest {
 
     }
 
+    @Test
+    fun getQueryName() {
+        val expected = "select * from product"
+        val query = sequelize[QueryName.simpleTest.name]
+        Assert.assertEquals(expected, query)
+    }
+
 }

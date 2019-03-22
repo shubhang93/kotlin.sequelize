@@ -15,12 +15,8 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         queryMap = extractQueryMap(filePath = queriesFilePath)
     }
 
-    fun getQuery(queryName: String): String? {
+    operator fun get(queryName: String): String? {
         return queryMap[queryName]
-    }
-
-    fun getQueryList(vararg queryNames: String): List<String?> {
-        return queryNames.map { queryMap[it] }.filter { it != null }
     }
 
 
