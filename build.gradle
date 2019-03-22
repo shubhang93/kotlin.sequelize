@@ -14,7 +14,7 @@ plugins {
 
 }
 
-version '1.0'
+version '1.01'
 
 sourceCompatibility = 1.8
 
@@ -98,8 +98,8 @@ bintray {
         licenses = ["Apache-2.0"]
         vcsUrl = "https://github.com/shubhang93/kotlin.sequelize.git"
         version {
-            name = "1.0.0"
-            desc = "1.0.0"
+            name = "1.0.1"
+            desc = "1.0.1"
             released = new Date()
 
         }

@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b0cb44c9-9d72-4fc8-a4af-79a58b63605b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -53,8 +54,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="149">
-              <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="585">
+              <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+              <folding>
+                <element signature="e#23#257#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -71,7 +84,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
+            <state relative-caret-position="285">
               <caret line="20" selection-start-line="20" selection-end-line="20" />
               <folding>
                 <element signature="e#28#87#0" expanded="true" />
@@ -83,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="163">
+              <caret line="150" selection-start-line="150" selection-end-line="150" />
             </state>
           </provider>
         </entry>
@@ -92,8 +105,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="259">
-              <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+            <state relative-caret-position="145">
+              <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -110,6 +123,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>QUERY_SPLITTER_PATTERN</find>
+      <find>apply</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -138,13 +152,14 @@
         <option value="$PROJECT_DIR$/src/main/kotlin/sequelize/Sequelize.dsl.kt" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
         <option value="$PROJECT_DIR$/codecov.yaml" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console_1.sql" />
         <option value="$PROJECT_DIR$/src/test/resources/sql/test2.sql" />
         <option value="$PROJECT_DIR$/src/test/resources/sql/test.sql" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.travis.yml" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
       </list>
@@ -161,52 +176,16 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="kotlin.sequelize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin.sequelize" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="kotlin.sequelize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin.sequelize" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kotlin.sequelize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin.sequelize" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="kotlin.sequelize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin.sequelize" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kotlin.sequelize" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kotlin.sequelize" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="kotlin" type="462c0819:PsiDirectoryNode" />
-              <item name="SequelizeTest.kt" type="24436e51:KtFileTreeNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql&#10;h2.unified&#10;h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553104924919" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553137085043" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -283,7 +262,11 @@
       <workItem from="1552059661684" duration="17153000" />
       <workItem from="1552127516899" duration="8247000" />
       <workItem from="1552498138573" duration="1674000" />
-      <workItem from="1553097355111" duration="7027000" />
+      <workItem from="1553097355111" duration="8393000" />
+      <workItem from="1553107068496" duration="937000" />
+      <workItem from="1553161190694" duration="97000" />
+      <workItem from="1553182219271" duration="610000" />
+      <workItem from="1553274757028" duration="773000" />
     </task>
     <task id="LOCAL-00001" summary="feat: remove dsl noise">
       <created>1552499449687</created>
@@ -362,25 +345,38 @@
       <option name="project" value="LOCAL" />
       <updated>1553104693382</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="fix: pass queries path as env">
+      <created>1553105004349</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1553105004349</updated>
+    </task>
+    <task id="LOCAL-00013" summary="fix: move extension functions as member functions">
+      <created>1553107275304</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1553107275304</updated>
+    </task>
+    <task id="LOCAL-00014" summary="feat: update tests">
+      <created>1553274879151</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1553274879152</updated>
+    </task>
+    <task id="LOCAL-00015" summary="feat: update version">
+      <created>1553274959647</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1553274959647</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 18s.xml">
-      <configuration name="SequelizeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 33s.xml">
-      <configuration name="SequelizeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.20 at 22h 13m 58s.xml">
-      <configuration name="SequelizeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.20 at 22h 14m 32s.xml">
-      <configuration name="SequelizeTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SequelizeTest - 2019.03.20 at 22h 15m 13s.xml">
-      <configuration name="SequelizeTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SequelizeTest - 2019.03.20 at 22h 16m 23s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
@@ -396,15 +392,29 @@
     <history-entry file="SequelizeTest - 2019.03.20 at 23h 08m 31s.xml">
       <configuration name="SequelizeTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SequelizeTest - 2019.03.21 at 00h 10m 42s.xml">
+      <configuration name="SequelizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SequelizeTest - 2019.03.21 at 08h 27m 14s.xml">
+      <configuration name="SequelizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SequelizeTest - 2019.03.21 at 08h 27m 57s.xml">
+      <configuration name="SequelizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SequelizeTest - 2019.03.22 at 22h 43m 15s.xml">
+      <configuration name="SequelizeTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SequelizeTest - 2019.03.22 at 22h 44m 22s.xml">
+      <configuration name="SequelizeTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36277000" />
+    <option name="totallyTimeSpent" value="40060000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3004292" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.30472103" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -418,10 +428,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Build" order="7" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Build" order="7" weight="0.3299363" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Database Console" order="9" weight="0.3299363" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" weight="0.42292994" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49928468" visible="true" weight="0.42292994" />
       <window_info anchor="bottom" id="Docker" order="11" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.42292994" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3299363" />
@@ -494,7 +504,11 @@
     <MESSAGE value="feat:update readme.md" />
     <MESSAGE value="feat:test single record fetch" />
     <MESSAGE value="feat: add bintray publishing" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: add bintray publishing" />
+    <MESSAGE value="fix: pass queries path as env" />
+    <MESSAGE value="fix: move extension functions as member functions" />
+    <MESSAGE value="feat: update tests" />
+    <MESSAGE value="feat: update version" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: update version" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console.sql">
@@ -535,13 +549,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/test.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/test.sql" />
     <entry file="file://$PROJECT_DIR$/build/reports/tests/test/index.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -581,53 +589,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/DSLMakers.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/EntityRelationMapping.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/fileContentTransformer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/DSLMakers.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/EntityRelationMapping.kt" />
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#28#87#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/codecov.yaml">
       <provider selected="true" editor-type-id="text-editor">
@@ -667,34 +633,61 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="41" column="14" selection-start-line="41" selection-start-column="14" selection-end-line="41" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/test/test.h2.trace.db">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="255">
+          <caret line="17" column="52" selection-start-line="17" selection-start-column="52" selection-end-line="17" selection-end-column="52" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="25" column="25" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="585">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+          <folding>
+            <element signature="e#23#257#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/fileContentTransformer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="e#28#87#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="150" selection-start-line="150" selection-end-line="150" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
+        <state relative-caret-position="145">
+          <caret line="101" column="25" selection-start-line="101" selection-start-column="25" selection-end-line="101" selection-end-column="25" />
         </state>
       </provider>
     </entry>
