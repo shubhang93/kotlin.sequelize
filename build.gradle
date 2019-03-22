@@ -14,7 +14,7 @@ plugins {
 
 }
 
-version '1.0-SNAPSHOT'
+version '1.0'
 
 sourceCompatibility = 1.8
 
@@ -56,7 +56,7 @@ def pomConfig = {
     }
 
     scm {
-        url "https://github.com/thombergs/myAwesomeLib"
+        url "https://github.com/shubhang93/kotlin.sequelize.git"
     }
 }
 
@@ -97,10 +97,10 @@ bintray {
         userOrg = "shubhang93"
         licenses = ["Apache-2.0"]
         vcsUrl = "https://github.com/shubhang93/kotlin.sequelize.git"
-        version{
-            name="1.0.0"
-            desc="1.0.0"
-            released= new Date()
+        version {
+            name = "1.0.0"
+            desc = "1.0.0"
+            released = new Date()
 
         }
 
@@ -122,8 +122,6 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
-
-
 
 
 test {
