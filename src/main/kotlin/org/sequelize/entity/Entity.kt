@@ -26,8 +26,7 @@ class Entity(dataSource: DataSource, private val entityRelationMapping: Map<Stri
         val compoundWhereConstruct =
             if (compoundKeys != null) generateWhereConstructForCompoundKeys(compoundKeys) else " WHERE $pk = :$pk"
         val selectStmt = "SELECT * FROM $entityName$compoundWhereConstruct"
-
-        println("Select Stmt --> $selectStmt")
+        
 
 
     }
