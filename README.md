@@ -65,6 +65,8 @@ SELECT * FROM product where product_purchase_month =:monthNums;
 ```kotlin
     fun main(){
         val dataSource = MySqlDataSource()
+        /*Configure dataSource Object*/
+        
         val sqz = Sequelize(dataSource,"/path/to/where/all/your/.sql/query/folder")
         /*Use the fetch API to execute the query and retrieve results*/
         //Returns single row

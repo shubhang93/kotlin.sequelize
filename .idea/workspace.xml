@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0cb44c9-9d72-4fc8-a4af-79a58b63605b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -53,11 +51,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="284">
-              <caret line="99" column="51" lean-forward="true" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+              <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="342">
+                <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -125,13 +135,13 @@
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1d8310d9-af49-4c0d-99d8-d7070eb9960d/console_1.sql" />
         <option value="$PROJECT_DIR$/src/test/resources/sql/test2.sql" />
         <option value="$PROJECT_DIR$/src/test/resources/sql/test.sql" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -230,7 +240,7 @@
     <property name="DatabaseDriversLRU" value="mysql&#10;h2.unified&#10;h2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553325782607" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553326012523" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -316,7 +326,7 @@
       <workItem from="1553275839056" duration="157000" />
       <workItem from="1553276058874" duration="820000" />
       <workItem from="1553324186959" duration="187000" />
-      <workItem from="1553324461197" duration="1005000" />
+      <workItem from="1553324461197" duration="1233000" />
     </task>
     <task id="LOCAL-00001" summary="feat: remove dsl noise">
       <created>1552499449687</created>
@@ -430,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553324494140</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="fix: readme">
+      <created>1553325899242</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1553325899242</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -466,7 +483,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42188000" />
+    <option name="totallyTimeSpent" value="42416000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -479,6 +496,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3090129" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -502,7 +520,7 @@
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.42292994" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="14" weight="0.3299363" />
-      <window_info anchor="bottom" id="Version Control" order="15" />
+      <window_info anchor="bottom" id="Version Control" order="15" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -575,7 +593,8 @@
     <MESSAGE value="feat: update tests" />
     <MESSAGE value="feat: update version" />
     <MESSAGE value="fix: test setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: test setup" />
+    <MESSAGE value="fix: readme" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: readme" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console.sql">
@@ -668,16 +687,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test2.sql" />
     <entry file="file://$PROJECT_DIR$/src/test/resources/sql/test.sql" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="353">
-            <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/test/test.h2.trace.db" />
     <entry file="file://$PROJECT_DIR$/.travis.yml" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/util/resultSetTransformer.kt">
@@ -749,7 +758,17 @@
     <entry file="file://$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
-          <caret line="99" column="51" lean-forward="true" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+          <caret line="99" column="51" selection-start-line="99" selection-start-column="51" selection-end-line="99" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="342">
+            <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
