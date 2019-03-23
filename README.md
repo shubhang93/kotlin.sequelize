@@ -69,11 +69,11 @@ SELECT * FROM product where product_purchase_month =:monthNums
         /*Use the fetch API to execute the query and retrieve results*/
         //Returns single row
         val product1 = sqz.fetchOne{queryName="product";params = mapOf("productCode" to ""AXCN9008")}
-        // OR IF YOU PREFER TO CALL IT LIKE A FUNCTION
+        /*OR IF YOU PREFER TO CALL IT LIKE A FUNCTION*/
         val product2 = sqz.fetchOne(queryName="product", params = mapOf("productCode" to "CNN90877"))
-        //Return Multiple rows
+        /*Return Multiple rows*/
         val productsInJune = sqz.fetch(queryName="productsBeforeJune", params=mapOf("monthNum" to 6))
-        //Pass List of args to in-queries
+        /*Pass List of args to in-queries*/
         val productsInMayOrApril = sqz.fetch(queryName="productsBeforeJune", params=mapOf("monthNums" to listOf(4,5)))
      
     }
