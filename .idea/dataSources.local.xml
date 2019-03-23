@@ -12,13 +12,7 @@
       <introspection-schemas>*:unza_mt</introspection-schemas>
     </data-source>
     <data-source name="test" uuid="1d8310d9-af49-4c0d-99d8-d7070eb9960d">
-      <database-info product="H2" version="1.4.196 (2017-06-10)" jdbc-version="4.0" driver-name="H2 JDBC Driver" driver-version="1.4.196 (2017-06-10)" dbms="H2" exact-version="1.4.196" exact-driver-version="1.4">
-        <identifier-quote-string>&quot;</identifier-quote-string>
-      </database-info>
-      <case-sensitivity plain-identifiers="upper" quoted-identifiers="exact" />
-      <secret-storage>master_key</secret-storage>
-      <auth-required>false</auth-required>
-      <introspection-schemas>@:@|TEST:PUBLIC</introspection-schemas>
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="H2" exact-version="0" />
     </data-source>
   </component>
 </project>

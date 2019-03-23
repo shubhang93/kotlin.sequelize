@@ -18,7 +18,6 @@ class QueryParamBuilder {
         return QueryParam(queryName, params, one)
     }
 
-
 }
 
 

@@ -56,9 +56,9 @@ SELECT * FROM product where product_code=:productCode;
 -- name: bestRatedProducts
 SELECT * FROM product where product_rating = 5000;
 -- name: productInJune
-SELECT * FROM product where product_purchase_month = :monthNum
+SELECT * FROM product where product_purchase_month = :monthNum;
 -- name: productInMayOrApril
-SELECT * FROM product where product_purchase_month =:monthNums
+SELECT * FROM product where product_purchase_month =:monthNums;
 
 ```
 
@@ -68,13 +68,16 @@ SELECT * FROM product where product_purchase_month =:monthNums
         val sqz = Sequelize(dataSource,"/path/to/where/all/your/.sql/query/folder")
         /*Use the fetch API to execute the query and retrieve results*/
         //Returns single row
-        val product1 = sqz.fetchOne{queryName="product";params = mapOf("productCode" to ""AXCN9008")}
-        /*OR IF YOU PREFER TO CALL IT LIKE A FUNCTION*/
+        val product1 = sqz.fetchOne{queryName="product"; params = mapOf("productCode" to "AXCN9008")}
+    
+    
         val product2 = sqz.fetchOne(queryName="product", params = mapOf("productCode" to "CNN90877"))
-        /*Return Multiple rows*/
+      
+      
         val productsInJune = sqz.fetch(queryName="productsBeforeJune", params=mapOf("monthNum" to 6))
-        /*Pass List of args to in-queries*/
-        val productsInMayOrApril = sqz.fetch(queryName="productsBeforeJune", params=mapOf("monthNums" to listOf(4,5)))
+        
+        
+        val productsInMayOrApril = sqz.fetch{queryName="productsBeforeJune"; params=mapOf("monthNums" to listOf(4,5))}
      
     }
     

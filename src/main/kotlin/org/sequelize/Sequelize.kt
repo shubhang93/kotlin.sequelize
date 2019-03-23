@@ -36,12 +36,13 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
             throw Exception("$queryName query Not Found")
     }
 
-    fun fetch(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
+
+    infix fun fetch(block: QueryParamBuilder.() -> Unit): ArrayList<Map<String, Any>> {
         val queryParam = QueryParamBuilder().apply(block).build()
         return getQueryResults(queryParam.queryName, queryParam.params) ?: arrayListOf()
     }
 
-    fun fetchOne(block: QueryParamBuilder.() -> Unit): Map<String, Any>? {
+    infix fun fetchOne(block: QueryParamBuilder.() -> Unit): Map<String, Any>? {
         val queryParam = QueryParamBuilder().apply(block).build()
         return getQueryResults(queryParam.queryName, queryParam.params)?.first()
     }
