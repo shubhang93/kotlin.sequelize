@@ -26,7 +26,6 @@ class Entity(dataSource: DataSource, private val entityRelationMapping: Map<Stri
         val compoundWhereConstruct =
             if (compoundKeys != null) generateWhereConstructForCompoundKeys(compoundKeys) else " WHERE $pk = :$pk"
         val selectStmt = "SELECT * FROM $entityName$compoundWhereConstruct"
-        
 
 
     }
@@ -34,6 +33,8 @@ class Entity(dataSource: DataSource, private val entityRelationMapping: Map<Stri
     private fun generateWhereConstructForCompoundKeys(compoundKeys: List<String>): String {
         return " WHERE " + compoundKeys.joinToString(" AND ") { "$it=:$it" }
     }
+
+
 
 
     fun saveBatch(entityName: String, data: List<Map<String, Any>>): IntArray {

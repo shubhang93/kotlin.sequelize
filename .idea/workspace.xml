@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="b0cb44c9-9d72-4fc8-a4af-79a58b63605b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -45,8 +46,7 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -54,7 +54,29 @@
     </projectState>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+              <folding>
+                <element signature="e#23#257#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="36" selection-start-line="36" selection-end-line="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -77,7 +99,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="fb" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RESET_MODE" value="HARD" />
@@ -101,11 +123,11 @@
         <option value="$PROJECT_DIR$/src/test/resources/sql/test.sql" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" />
         <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt" />
-        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
         <option value="$PROJECT_DIR$/src/test/kotlin/SequelizeTest.kt" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt" />
+        <option value="$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt" />
       </list>
     </option>
   </component>
@@ -120,11 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -201,6 +218,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,6 +314,7 @@
       <workItem from="1553276058874" duration="820000" />
       <workItem from="1553324186959" duration="187000" />
       <workItem from="1553324461197" duration="1233000" />
+      <workItem from="1559529686912" duration="324000" />
     </task>
     <task id="LOCAL-00001" summary="feat: remove dsl noise">
       <created>1552499449687</created>
@@ -415,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553325899242</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="feat: use sequelize from master">
+      <created>1559472346362</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1559472346362</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -451,7 +478,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42419000" />
+    <option name="totallyTimeSpent" value="43043000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -464,6 +491,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.3090129" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -561,7 +589,8 @@
     <MESSAGE value="feat: update version" />
     <MESSAGE value="fix: test setup" />
     <MESSAGE value="fix: readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: readme" />
+    <MESSAGE value="feat: use sequelize from master" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: use sequelize from master" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/1304168e-1aa0-4562-ad58-4e951080c4da/console.sql">
@@ -689,20 +718,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/EntityRelationMapping.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/IEntity.kt" />
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/dsl/Sequelize.dsl.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -724,6 +739,23 @@
             <caret line="68" column="8" selection-start-line="68" selection-start-column="8" selection-end-line="68" selection-end-column="8" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/entity/Entity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/kotlin/org/sequelize/Sequelize.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="60" lean-forward="true" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#23#257#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

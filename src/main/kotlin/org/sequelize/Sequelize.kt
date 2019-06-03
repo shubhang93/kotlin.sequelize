@@ -59,5 +59,12 @@ class Sequelize(dataSource: DataSource, queriesFilePath: String) {
         return getQueryResults(queryName, params)?.first()
     }
 
+    fun executeRawQuery(sql: String, args: Map<String, Any>): ArrayList<Map<String, Any>> {
+        val rows = namedParameterJdbcTemplate.execute(sql, args) { ps ->
+            val results = ps.executeQuery()
+            resultSetTransformer(results, results.metaData)
+        }
+        return rows ?: arrayListOf()
+    }
 
 }
